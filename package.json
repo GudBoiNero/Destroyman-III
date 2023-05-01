@@ -1,0 +1,28 @@
+{
+  "name": "destroyman-iii",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "GudBoiNero#6650",
+  "license": "ISC",
+  "dependencies": {
+    "airtable": "^0.11.6",
+    "discord.js": "^14.9.0",
+    "google-spreadsheet": "^3.3.0",
+    "jsdom": "^21.1.1",
+    "read-excel-file": "^5.6.1",
+    "scrape-html-web": "^2.3.7",
+    "simple-excel-to-json": "^2.3.0",
+    "webpagedatascraper": "^1.0.17",
+    "xlsx": "^0.18.5",
+    "xlsx-parse-json": "^3.1.1",
+    "xlsx-table-data-to-json": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.39.0",
+    "excel": "^1.0.1"
+  }
+}

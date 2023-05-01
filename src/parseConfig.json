@@ -1,0 +1,98 @@
+{
+    "REPLACEMENTS": {
+        "talents": {
+            "requirements": "formatted_reqs"
+        },
+        "mantras": {
+            "requirements": "formatted_reqs",
+            "attribute_/_oath": "type",
+            "attribute__oath": "type",
+            "attribute_oath": "type"
+        },
+        "weapons": {},
+        "outfits": {
+            "requirements": "materials",
+            "notes_cost": "cost"
+        },
+        "mystic": {
+            "dialogue": "category",
+            "mystic_dialogue": "dialogue"
+        },
+        "enchants": {},
+        "sheet7": {},
+        "credits": {}
+    },
+    "GROUPING": {
+        "talents": {
+            "reqs": [
+                "power",
+                "strength",
+                "fortitude",
+                "agility",
+                "intelligence",
+                "willpower",
+                "charisma",
+                "light_wep",
+                "medium_wep",
+                "heavy_wep",
+                "flamecharm",
+                "frostdraw",
+                "thundercall",
+                "galebreathe",
+                "shadowcast"
+            ]
+        },
+        "mantras": {
+            "reqs": [
+                "power",
+                "strength",
+                "fortitude",
+                "agility",
+                "intelligence",
+                "willpower",
+                "charisma",
+                "light_wep",
+                "medium_wep",
+                "heavy_wep",
+                "flamecharm",
+                "frostdraw",
+                "thundercall",
+                "galebreathe",
+                "shadowcast"
+            ]
+        },
+        "weapons": {
+            "reqs": [
+                "strength",
+                "fortitude",
+                "agility",
+                "intelligence",
+                "willpower",
+                "charisma",
+                "light_wep",
+                "medium_wep",
+                "heavy_wep",
+                "flamecharm",
+                "frostdraw",
+                "thundercall",
+                "galebreathe",
+                "shadowcast"
+            ]
+        },
+        "outfits": {
+            "reqs": [
+                "power",
+                "strength",
+                "fortitude",
+                "agility",
+                "intelligence",
+                "willpower",
+                "charisma"
+            ]
+        },
+        "mystic": {},
+        "enchants": {},
+        "sheet7": {},
+        "credits": {}
+    }
+}
