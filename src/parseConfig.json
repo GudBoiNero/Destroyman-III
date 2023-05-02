@@ -1,4 +1,14 @@
 {
+    "REMOVE": {
+        "talents": [],
+        "mantras": [],
+        "weapons": [],
+        "outfits": [],
+        "mystic": [],
+        "enchants": [],
+        "sheet7": [],
+        "credits": []
+    },
     "REPLACEMENTS": {
         "talents": {
             "requirements": "formatted_reqs"
@@ -59,6 +69,32 @@
                 "thundercall",
                 "galebreathe",
                 "shadowcast"
+            ],
+            "ingredients": [
+                "aeon_logstone",
+                "eternal_logstone",
+
+                "crystal_lens",
+                "perfect_lens",
+
+                "cloudstone",
+                "stratus_stone",
+
+                "drift_shard",
+                "rush_shard",
+
+                "glass_stone",
+                "magnifying_stone",
+
+                "blast_spark",
+                "magnet_spark",
+                "multiplying_spark",
+                "reversal_spark",
+                "round_spark",
+                "spring_spark",
+                "tornado_spark",
+
+                "vibrant_gem"
             ]
         },
         "weapons": {

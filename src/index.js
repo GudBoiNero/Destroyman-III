@@ -6,8 +6,8 @@ const { consoleColors } = require('../src/util/consoleColors.js')
 const { replaceAll, replaceAllInList } = require('../src/util/replaceAll.js')
 
 const { Client, GatewayIntentBits, Collection, Events, REST, Routes } = require('discord.js')
-const { CLIENT_TOKEN, CLIENT_ID, DWCO_API_ENDPOINT } = require('./config.json');
-const { GROUPING, REPLACEMENTS } = require('./parseConfig.json');
+const { CLIENT_TOKEN, CLIENT_ID } = require('./config.json');
+const { GROUPING, REPLACEMENTS, REMOVE } = require('./parseConfig.json');
 
 const client = new Client({ intents: GatewayIntentBits.Guilds })
 
@@ -45,9 +45,9 @@ client.on(Events.ClientReady, async () => {
 
 
 async function fetchData() {
-	const parsedData = {}
-
 	console.log(consoleColors.FG_MAGENTA + 'Fetching Spreadsheet...')
+
+	const parsedData = {}
 	const response = await fetch("https://docs.google.com/spreadsheets/d/1AKC_KhnCe44gtWmfI2cmKjvIDbTfC0ACfP15Z7UauvU/htmlview")
 
 	if (!response.ok) { return console.error(response.statusText) }
@@ -71,24 +71,6 @@ async function fetchData() {
 	})()
 	//#endregion
 
-	//#region remove_empty_cells 
-
-	/*let removableElements = doc.getElementsByClassName('freezebar-cell')
-	console.log(consoleColors.FG_MAGENTA+`Removing ${removableElements.length} Empty Cells...`)
-	while (removableElements.length > 0) { // Need to iterate because apparently half of getElementsByClass is always null...?
-		for (var i = 0, length = removableElements.length; i < length; i++) {
-			const element = removableElements.item(i)
-
-			if (!element) continue
-
-			element.remove()
-			console.log(consoleColors.FG_GRAY+'| Removed Empty Cell... ')
-		}
-		removableElements = doc.getElementsByClassName('freezebar-cell')
-	}*/
-
-	//#endregion
-
 	//#region parse_data
 	console.log(consoleColors.FG_MAGENTA + 'Parsing Data...')
 	// Parse data in sheets and add to parsedData
@@ -97,7 +79,7 @@ async function fetchData() {
 		const sheet = sheetData.element
 		const sheetContent = sheet.getElementsByClassName('waffle')[0].childNodes[1] // Grabs <tbody> of <table class="waffle"...>
 
-		console.log(consoleColors.FG_GRAY + `| Parsing '${sheetData.name.toLowerCase()}' Sheet...`)
+		//console.log(consoleColors.FG_GRAY + `| Parsing '${sheetData.name.toLowerCase()}' Sheet...`)
 
 		const data = []
 
@@ -136,7 +118,9 @@ async function fetchData() {
 				} // Skip if cell is header
 
 				let content = cell.textContent
-				content = replaceAllInList(content, ['(', ')'], '')
+				content = replaceAllInList(content, ['(', ')', '.', '?'], '')
+
+				if (header == '' || header in REMOVE[sheetData.name]) continue;
 
 				// Get header name and add cell content to cellData[header]'s value
 				cellData[header] = content
@@ -158,12 +142,16 @@ async function fetchData() {
 
 			data.push(cellData)
 		}
-		console.log(consoleColors.FG_GRAY + `| ${rows.length} Entries`)
+
+		//console.log(consoleColors.FG_GRAY + `| ${rows.length} Entries`)
 
 		parsedData[sheetData.name] = data
 	}
 
-	// Apply rules from parseConfig.json
+	//#endregion
+
+	//#region config
+	// Apply REPLACEMENTS and GROUPING from parseConfig.json
 	for (var sheetIndex = 0, sheetLength = Object.keys(parsedData).length; sheetIndex < sheetLength; sheetIndex++) {
 		const sheetName = Object.keys(parsedData)[sheetIndex]
 		const sheetData = parsedData[sheetName]
@@ -171,7 +159,7 @@ async function fetchData() {
 		// Replacements
 		for (var entryIndex = 0, sheetDataLength = sheetData.length; entryIndex < sheetDataLength; entryIndex++) {
 			let entry = sheetData[entryIndex]
-			
+
 			const replacements = REPLACEMENTS[sheetName]
 			for (var replacementsIndex = 0, replacementsLength = Object.keys(replacements).length; replacementsIndex < replacementsLength; replacementsIndex++) {
 				// Get key
@@ -179,35 +167,48 @@ async function fetchData() {
 				// Get value
 				const replacementName = replacements[propertyName]
 
-				console.log(`Replacing ${sheetName}.${propertyName} -> ${sheetName}.${replacementName}`)
-
 				// Check if entry has the propertyName
 				if (propertyName in entry) {
 					entry[replacementName] = entry[propertyName]
-					
+
 					entry = Object.keys(entry)
-					.filter(key => key != propertyName)
-					.reduce((acc, key) => {
-						acc[key] = entry[key];
-						return acc;
-					}, {});
+						.filter(key => key != propertyName)
+						.reduce((acc, key) => {
+							acc[key] = entry[key];
+							return acc;
+						}, {});
 				}
 			}
 
 			// Update new info
 			sheetData[entryIndex] = entry
 		}
-		
+
 		// Grouping
 		for (var entryIndex = 0, sheetDataLength = sheetData.length; entryIndex < sheetDataLength; entryIndex++) {
 			const entry = sheetData[entryIndex]
-			
+			const sheetGrouping = GROUPING[sheetName]
+
+			Object.keys(sheetGrouping).forEach(sheetGroupName => {
+				let group = {}
+				const sheetGroup = sheetGrouping[sheetGroupName]
+				sheetGroup.forEach(sheetProp => {
+					if (Object.keys(entry).includes(sheetProp)) {
+						group[sheetProp] = entry[sheetProp]
+						delete entry[sheetProp]
+					}
+				})
+				entry[sheetGroupName] = group
+			});
 		}
 	}
-	
-	console.log(parsedData)
 
 	//#endregion
+
+	// Write to file
+	const dataFilePath = 'res/raw_data/latest.data.json'
+	fs.writeFileSync(dataFilePath, JSON.stringify(parsedData, null, "\t"))
+	console.log(consoleColors.FG_MAGENTA + `Written to '${dataFilePath}'!`)
 }
 
 
