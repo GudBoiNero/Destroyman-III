@@ -6,7 +6,7 @@ const { consoleColors } = require('../src/util/consoleColors.js')
 const { replaceAll, replaceAllInList } = require('../src/util/replaceAll.js')
 
 const { Client, GatewayIntentBits, Collection, Events, REST, Routes } = require('discord.js')
-const { CLIENT_TOKEN, CLIENT_ID } = require('./config.json');
+const { CLIENT_TOKEN, CLIENT_ID, REFRESH_DATA } = require('./config.json');
 const { GROUPING, REPLACEMENTS, REMOVE } = require('./parseConfig.json');
 
 const client = new Client({ intents: GatewayIntentBits.Guilds })
@@ -36,10 +36,15 @@ for (const file of commandFiles) {
 client.on(Events.ClientReady, async () => {
 	console.log(consoleColors.FG_GREEN + 'Ready!')
 
-	try { await fetchData() }
-	catch (err) {
-		console.error(err);
-		console.log(consoleColors.FG_RED + `Unable to fetch data!`);
+
+	if (REFRESH_DATA) {
+		try { 
+			await fetchData() 
+		}
+		catch (err) {
+			console.error(err);
+			console.log(consoleColors.FG_RED + `Unable to fetch data!`);
+		}
 	}
 })
 
@@ -96,6 +101,7 @@ async function fetchData() {
 
 				header = header.textContent.toLowerCase()
 				header = replaceAll(header, ' ', '_')
+				header = replaceAllInList(header, ['?', '.'], '')
 
 				temp.push(header)
 			}
