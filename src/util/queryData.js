@@ -1,6 +1,10 @@
-module.exports = {
-    // Returns an entry from `latest.data.json` based on the input
-    findTalent(name='', category='', rarity=0, description='', reqs={}) {
+const fs = require('fs')
 
+module.exports = {
+    getSheet(name) {
+        const data = fs.readFileSync('res/raw_data/latest.data.json', { encoding: 'utf8', flag: 'r' })
+        const sheet = JSON.parse(data)[name]
+
+        return sheet
     }
 }
