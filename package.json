@@ -13,6 +13,7 @@
     "discord.js": "^14.9.0",
     "google-spreadsheet": "^3.3.0",
     "jsdom": "^21.1.1",
+    "node-fetch": "^2.6.9",
     "read-excel-file": "^5.6.1",
     "scrape-html-web": "^2.3.7",
     "simple-excel-to-json": "^2.3.0",

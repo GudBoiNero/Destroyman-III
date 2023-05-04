@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const fetch = require('node-fetch')
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom
 const { consoleColors } = require('../src/util/consoleColors.js')
@@ -84,7 +85,7 @@ async function fetchData() {
 		const sheet = sheetData.element
 		const sheetContent = sheet.getElementsByClassName('waffle')[0].childNodes[1] // Grabs <tbody> of <table class="waffle"...>
 
-		//console.log(consoleColors.FG_GRAY + `| Parsing '${sheetData.name.toLowerCase()}' Sheet...`)
+		// console.log(consoleColors.FG_GRAY + `| Parsing '${sheetData.name.toLowerCase()}' Sheet...`)
 
 		const data = []
 
@@ -124,7 +125,7 @@ async function fetchData() {
 				} // Skip if cell is header
 
 				let content = cell.textContent
-				content = replaceAllInList(content, ['(', ')', '.', '?'], '')
+				content = replaceAllInList(content, ['(', ')'], '')
 
 				if (header == '' || header in REMOVE[sheetData.name]) continue;
 

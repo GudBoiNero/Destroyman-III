@@ -1,6 +1,6 @@
-const { SlashCommandBuilder, SlashCommandSubcommandBuilder } = require('discord.js')
+const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js')
 const { getSheet } = require('../util/queryData')
-const reqNames = ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"]
+const talentReqNames = ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"]
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -21,14 +21,14 @@ module.exports = {
                         .setDescription('The description to search for...'))
                 .addStringOption(option =>
                     option.setName('rarity')
-                        .addChoices({name: 'common', value: 'common'}, {name: 'rare', value: 'rare'}, {name: 'advanced', value: 'advanced'})
+                        .addChoices({ name: 'common', value: 'common' }, { name: 'rare', value: 'rare' }, { name: 'advanced', value: 'advanced' })
                         .setDescription('The rarity to search for...'))
                 .addBooleanOption(option =>
                     option.setName('multiple').setDescription('Whether or not the command returns multiple results.'))
 
             // Exact Reqs
-            for (let index = 0; index < reqNames.length; index++) {
-                const name = reqNames[index];
+            for (let index = 0; index < talentReqNames.length; index++) {
+                const name = talentReqNames[index];
                 subcommand.addStringOption(option =>
                     option.setName(`${name}`).setDescription(`Maximum requirement of ${name}. int:int to denote minimum / maximum.`)
                 )
@@ -42,7 +42,7 @@ module.exports = {
             subcommand.setName('mantra')
                 .setDescription('Find a certain mantra.')
                 .addStringOption(option =>
-                    option.setName('name').setRequired(true)
+                    option.setName('mantra_name').setRequired(true)
                         .setDescription('The name to search for...'))
                 .addBooleanOption(option =>
                     option.setName('multiple').setRequired(true)
@@ -53,7 +53,7 @@ module.exports = {
             subcommand.setName('weapon')
                 .setDescription('Find a certain weapon.')
                 .addStringOption(option =>
-                    option.setName('name').setRequired(true)
+                    option.setName('weapon_name').setRequired(true)
                         .setDescription('The name to search for...'))
                 .addBooleanOption(option =>
                     option.setName('multiple').setRequired(true)
@@ -64,7 +64,7 @@ module.exports = {
             subcommand.setName('outfit')
                 .setDescription('Find a certain weapon.')
                 .addStringOption(option =>
-                    option.setName('name').setRequired(true)
+                    option.setName('outfit_name').setRequired(true)
                         .setDescription('The name to search for...'))
                 .addBooleanOption(option =>
                     option.setName('multiple').setRequired(true)
@@ -75,8 +75,8 @@ module.exports = {
             subcommand.setName('mystic')
                 .setDescription('Find a certain mystic option.')
                 .addStringOption(option =>
-                    option.setName('name').setRequired(true)
-                        .setDescription('The name to search for...'))
+                    option.setName('category').setRequired(true)
+                        .setDescription("The category in mystic's dialogue to search for..."))
                 .addBooleanOption(option =>
                     option.setName('multiple').setRequired(true)
                         .setDescription('Whether or not you want multiple results.')))
@@ -110,7 +110,10 @@ module.exports = {
 
         const entryName = getOption('name')
         const multiple = getOption('multiple') != undefined ? getOption('multiple').value : false
-
+        const embed = new EmbedBuilder()
+            .setColor(0x0099FF)
+            .setTitle('Query Result:')
+            .setTimestamp()
 
         const reqs = ((reqNames) => {
             let result = {}
@@ -135,13 +138,14 @@ module.exports = {
                 }
             }
             return result
-        })(reqNames)
+        })(talentReqNames)
 
         const validEntries = []
         switch (sheetName) {
             case 'talent': {
                 const sheet = getSheet(sheetName + 's')
 
+                // Determine entries
                 for (let index = 0; index < sheet.length; index++) {
                     const entry = sheet[index];
                     let valid = true
@@ -186,6 +190,14 @@ module.exports = {
                         validEntries.push(entry)
                     }
                 }
+
+                // Display the first five entries
+                for (let index = 0; index < (validEntries.length < 5 ? validEntries.length : 5); index++) {
+                    const entry = validEntries[index];
+                    embed.addFields({ name: entry[sheetName], value: entry.description })
+                }
+
+                embed.setFooter({ text: `Displaying 5 of ${validEntries.length} results.` })
             } break;
             case 'mantra': {
                 const sheet = getSheet(sheetName + 's')
@@ -210,7 +222,31 @@ module.exports = {
         }
 
         console.log(validEntries)
-        await interaction.reply('Querying...')
+
+        if (validEntries[0]) {
+            const nextPage = new ButtonBuilder()
+                .setCustomId('next_page')
+                .setLabel('Next Page')
+                .setStyle(ButtonStyle.Primary);
+
+            const navbarLabel = new ButtonBuilder()
+                .setCustomId('navbar_label')
+                .setLabel(' Navigation ')
+                .setDisabled(true)
+                .setStyle(ButtonStyle.Secondary);
+
+            const lastPage = new ButtonBuilder()
+                .setCustomId('last_page')
+                .setLabel('Last Page')
+                .setStyle(ButtonStyle.Primary);
+
+            const navbar = new ActionRowBuilder()
+                .addComponents(lastPage, navbarLabel, nextPage);
+
+            await interaction.reply({ embeds: [embed], components: [navbar] })
+        } else {
+            await interaction.reply(`**Query returned null.**`)
+        }
     }
 }
 
