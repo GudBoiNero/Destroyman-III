@@ -197,6 +197,7 @@ module.exports = {
                     embed.addFields({ name: entry[sheetName], value: entry.description })
                 }
 
+
                 embed.setFooter({ text: `Displaying 5 of ${validEntries.length} results.` })
             } break;
             case 'mantra': {
@@ -223,29 +224,47 @@ module.exports = {
 
         console.log(validEntries)
 
-        if (validEntries[0]) {
-            const nextPage = new ButtonBuilder()
-                .setCustomId('next_page')
-                .setLabel('Next Page')
-                .setStyle(ButtonStyle.Primary);
+        let pages = validEntries.length % 5 + (validEntries.length % 5 > 0 ? 1 : 0)
+        let currPage = 1
 
-            const navbarLabel = new ButtonBuilder()
-                .setCustomId('navbar_label')
-                .setLabel(' Navigation ')
-                .setDisabled(true)
-                .setStyle(ButtonStyle.Secondary);
+        // Check whether or not the query returned an entry or more
+        if (!validEntries[0]) return await interaction.reply(`**Query returned null.**`)
 
-            const lastPage = new ButtonBuilder()
-                .setCustomId('last_page')
-                .setLabel('Last Page')
-                .setStyle(ButtonStyle.Primary);
+        // Send message
+        const nextPage = new ButtonBuilder()
+            .setCustomId('next_page')
+            .setLabel('Next Page')
+            .setDisabled(currPage >= pages)
+            .setStyle(currPage < pages ? ButtonStyle.Primary : ButtonStyle.Secondary);
 
-            const navbar = new ActionRowBuilder()
-                .addComponents(lastPage, navbarLabel, nextPage);
+        const navbarLabel = new ButtonBuilder()
+            .setCustomId('navbar_label')
+            .setLabel(`${currPage} / ${pages}`)
+            .setDisabled(true)
+            .setStyle(ButtonStyle.Secondary);
 
-            await interaction.reply({ embeds: [embed], components: [navbar] })
-        } else {
-            await interaction.reply(`**Query returned null.**`)
+        const lastPage = new ButtonBuilder()
+            .setCustomId('last_page')
+            .setLabel('Last Page')
+            .setDisabled(currPage <= 1)
+            .setStyle(currPage > 1 ? ButtonStyle.Primary : ButtonStyle.Secondary);
+
+        const navbar = new ActionRowBuilder()
+            .addComponents(lastPage, navbarLabel, nextPage);
+
+        const response = await interaction.reply({ embeds: [embed], components: [navbar] })
+        const collectorFilter = i => i.user.id === interaction.user.id;
+
+        // Handling page buttons
+        const buttonInteraction = await response.awaitMessageComponent({ filter: collectorFilter })
+
+        switch ( buttonInteraction.customId ) {
+            case 'last_page': {
+
+            } break;
+            case 'next_page': {
+
+            } break;
         }
     }
 }
