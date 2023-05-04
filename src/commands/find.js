@@ -1,6 +1,10 @@
-const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js')
+const { SlashCommandBuilder, EmbedBuilder, ButtonComponent, ButtonStyle, ActionRowBuilder } = require('discord.js')
 const { getSheet } = require('../util/queryData')
+const { PagesBuilder, PagesManager } = require('discord.js-pages');
+const { replaceAll } = require('../util/replaceAll');
+
 const talentReqNames = ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"]
+const pagesManager = new PagesManager();
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -29,6 +33,7 @@ module.exports = {
             // Exact Reqs
             for (let index = 0; index < talentReqNames.length; index++) {
                 const name = talentReqNames[index];
+                
                 subcommand.addStringOption(option =>
                     option.setName(`${name}`).setDescription(`Maximum requirement of ${name}. int:int to denote minimum / maximum.`)
                 )
@@ -97,6 +102,8 @@ module.exports = {
         const options = interaction.options
         const sheetName = options._subcommand
 
+        pagesManager.middleware(interaction);
+
         /**
          * @param {String} name 
          * @returns {any}
@@ -108,12 +115,10 @@ module.exports = {
             }
         }
 
-        const entryName = getOption('name')
         const multiple = getOption('multiple') != undefined ? getOption('multiple').value : false
-        const embed = new EmbedBuilder()
-            .setColor(0x0099FF)
-            .setTitle('Query Result:')
-            .setTimestamp()
+        const pages = []
+        const validEntries = []
+        let pageCount = 0
 
         const reqs = ((reqNames) => {
             let result = {}
@@ -140,7 +145,6 @@ module.exports = {
             return result
         })(talentReqNames)
 
-        const validEntries = []
         switch (sheetName) {
             case 'talent': {
                 const sheet = getSheet(sheetName + 's')
@@ -150,6 +154,7 @@ module.exports = {
                     const entry = sheet[index];
                     let valid = true
 
+                    // Reduce to testHeaders
                     // Check if it meets reqs OR even has 'reqs' as a value
                     if (entry["reqs"]) {
                         for (let reqIndex = 0; reqIndex < Object.keys(reqs).length; reqIndex++) {
@@ -158,16 +163,15 @@ module.exports = {
                             const entryReq = parseInt(entry["reqs"][reqName])
 
                             // Check if req is a range 
-                            if (optionReq["min"] || optionReq["max"]) {
+                            if (optionReq["min"] && optionReq["max"]) {
                                 if (!(entryReq >= optionReq.min && entryReq <= optionReq.max)) valid = false;
                             } else {
                                 if (!(entryReq == optionReq)) valid = false;
                             }
-
-
                         }
                     }
 
+                    // Reduce these functions to testHeader
                     if (getOption('talent_name') != undefined) {
                         const talentName = getOption('talent_name').value.toLowerCase()
                         if (!(entry["talent"].toLowerCase()).includes(talentName)) valid = false;
@@ -185,20 +189,55 @@ module.exports = {
                         if (!(entry["rarity"].toLowerCase()).includes((rarity))) valid = false;
                     }
 
-
                     if (valid) {
                         validEntries.push(entry)
                     }
                 }
 
-                // Display the first five entries
-                for (let index = 0; index < (validEntries.length < 5 ? validEntries.length : 5); index++) {
-                    const entry = validEntries[index];
-                    embed.addFields({ name: entry[sheetName], value: entry.description })
+                // Create pages
+                pageCount = Math.ceil(validEntries.length / 5)
+                for (let pageIndex = 0; pageIndex < pageCount; pageIndex++) {
+                    // Display the first five entries
+                    for (let entryIndex = 0; entryIndex < 5; entryIndex++) {
+                        const entry = validEntries[entryIndex + (pageIndex * 5)];
+
+                        if (!entry) continue;
+
+                        const talentName = entry[sheetName]
+
+                        const embed = new EmbedBuilder()
+                            .setColor(0x0099FF)
+                            .setTitle(`Talent: ${talentName}`)
+                            .setTimestamp()
+                            .addFields(
+                                { name: 'Description:', value: '```'+`${entry['description']}`+'```'},
+                                { name: 'Category:', value: '```'+`${entry['category']}`+'```', inline: true },
+                                { name: 'Rarity:', value: '```'+`${entry['rarity']}`+'```', inline: true },
+                                //{ name: 'Requirements:', value: '```'+`${entry['formatted_reqs']}`+'```' },
+                            )
+                            .setFooter({ text: `Displaying ${validEntries.length >= 5 ? 5 : validEntries.length} of ${validEntries.length} results.` });
+
+                        // Set requirements
+
+                        const capitalize = (word) => {
+                            const lower = word.toLowerCase();
+                            return word.charAt(0).toUpperCase() + lower.slice(1);
+                        }
+
+                        let reqResults = ''
+                        for (let reqIndex = 0; reqIndex < Object.keys(entry["reqs"]).length; reqIndex++) {
+                            const reqName = Object.keys(entry["reqs"])[reqIndex];
+                            
+                            if (!parseInt(entry["reqs"][reqName]) > 0) continue;
+
+                            reqResults += `${replaceAll(capitalize(reqName), '_', ' ')}: ${entry["reqs"][reqName]}\n`
+                        }
+
+                        if (reqResults != '') embed.addFields({ name: 'Requirements', value: '```'+`${reqResults}`+'```'})
+
+                        pages.push(embed)
+                    }
                 }
-
-
-                embed.setFooter({ text: `Displaying 5 of ${validEntries.length} results.` })
             } break;
             case 'mantra': {
                 const sheet = getSheet(sheetName + 's')
@@ -222,50 +261,20 @@ module.exports = {
             } break;
         }
 
-        console.log(validEntries)
-
-        let pages = validEntries.length % 5 + (validEntries.length % 5 > 0 ? 1 : 0)
-        let currPage = 1
-
         // Check whether or not the query returned an entry or more
-        if (!validEntries[0]) return await interaction.reply(`**Query returned null.**`)
+        if (validEntries[0] == undefined) return await interaction.reply(`**Query returned null.**`)
 
-        // Send message
-        const nextPage = new ButtonBuilder()
-            .setCustomId('next_page')
-            .setLabel('Next Page')
-            .setDisabled(currPage >= pages)
-            .setStyle(currPage < pages ? ButtonStyle.Primary : ButtonStyle.Secondary);
+        const result = new PagesBuilder(interaction)
+            .setTitle('Global title')
+            .setColor('Green')
+            .setDefaultButtons(['first', 'back', 'next', 'last'])
 
-        const navbarLabel = new ButtonBuilder()
-            .setCustomId('navbar_label')
-            .setLabel(`${currPage} / ${pages}`)
-            .setDisabled(true)
-            .setStyle(ButtonStyle.Secondary);
-
-        const lastPage = new ButtonBuilder()
-            .setCustomId('last_page')
-            .setLabel('Last Page')
-            .setDisabled(currPage <= 1)
-            .setStyle(currPage > 1 ? ButtonStyle.Primary : ButtonStyle.Secondary);
-
-        const navbar = new ActionRowBuilder()
-            .addComponents(lastPage, navbarLabel, nextPage);
-
-        const response = await interaction.reply({ embeds: [embed], components: [navbar] })
-        const collectorFilter = i => i.user.id === interaction.user.id;
-
-        // Handling page buttons
-        const buttonInteraction = await response.awaitMessageComponent({ filter: collectorFilter })
-
-        switch ( buttonInteraction.customId ) {
-            case 'last_page': {
-
-            } break;
-            case 'next_page': {
-
-            } break;
+        for (let index = 0; index < pages.length; index++) {
+            const page = pages[index];
+            result.addPages(page)
         }
+
+        result.build()
     }
 }
 
