@@ -1,10 +1,26 @@
-const { SlashCommandBuilder, EmbedBuilder, ButtonComponent, ButtonStyle, ActionRowBuilder } = require('discord.js')
+const { SlashCommandBuilder, EmbedBuilder, SlashCommandSubcommandBuilder } = require('discord.js')
 const { getSheet } = require('../util/queryData')
 const { PagesBuilder, PagesManager } = require('discord.js-pages');
 const { replaceAll } = require('../util/replaceAll');
 
 const talentReqNames = ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"]
 const pagesManager = new PagesManager();
+
+/**
+ * @param {SlashCommandSubcommandBuilder} subcommand 
+ * @param {Array<String>} orderByOptions
+ */
+const setSubcommandOrder = (subcommand, orderByOptions) => {
+    subcommand.addStringOption(option => {
+        option.setName('order_by').setDescription('Which value to order the results by.')
+
+        for (let index = 0; index < orderByOptions.length; index++) {
+            const header = orderByOptions[index];
+            option.addChoices({name: header, value: header})
+        }
+    })
+    return subcommand
+}
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -27,17 +43,17 @@ module.exports = {
                     option.setName('rarity')
                         .addChoices({ name: 'common', value: 'common' }, { name: 'rare', value: 'rare' }, { name: 'advanced', value: 'advanced' })
                         .setDescription('The rarity to search for...'))
-                .addBooleanOption(option =>
-                    option.setName('multiple').setDescription('Whether or not the command returns multiple results.'))
 
             // Exact Reqs
             for (let index = 0; index < talentReqNames.length; index++) {
                 const name = talentReqNames[index];
-                
+
                 subcommand.addStringOption(option =>
                     option.setName(`${name}`).setDescription(`Maximum requirement of ${name}. int:int to denote minimum / maximum.`)
                 )
             }
+
+            //subcommand = setSubcommandOrder(subcommand, talentReqNames.concat(['category', 'rarity', 'talent_name', 'description']))
 
             return subcommand
         })
@@ -47,55 +63,40 @@ module.exports = {
             subcommand.setName('mantra')
                 .setDescription('Find a certain mantra.')
                 .addStringOption(option =>
-                    option.setName('mantra_name').setRequired(true)
-                        .setDescription('The name to search for...'))
-                .addBooleanOption(option =>
-                    option.setName('multiple').setRequired(true)
-                        .setDescription('Whether or not you want multiple results.')))
+                    option.setName('mantra_name')
+                        .setDescription('The name to search for...')))
 
         // Weapon
         .addSubcommand(subcommand =>
             subcommand.setName('weapon')
                 .setDescription('Find a certain weapon.')
                 .addStringOption(option =>
-                    option.setName('weapon_name').setRequired(true)
-                        .setDescription('The name to search for...'))
-                .addBooleanOption(option =>
-                    option.setName('multiple').setRequired(true)
-                        .setDescription('Whether or not you want multiple results.')))
+                    option.setName('weapon_name')
+                        .setDescription('The name to search for...')))
 
         // Outfit        
         .addSubcommand(subcommand =>
             subcommand.setName('outfit')
                 .setDescription('Find a certain weapon.')
                 .addStringOption(option =>
-                    option.setName('outfit_name').setRequired(true)
-                        .setDescription('The name to search for...'))
-                .addBooleanOption(option =>
-                    option.setName('multiple').setRequired(true)
-                        .setDescription('Whether or not you want multiple results.')))
+                    option.setName('outfit_name')
+                        .setDescription('The name to search for...')))
 
         // Mystic
         .addSubcommand(subcommand =>
             subcommand.setName('mystic')
                 .setDescription('Find a certain mystic option.')
                 .addStringOption(option =>
-                    option.setName('category').setRequired(true)
-                        .setDescription("The category in mystic's dialogue to search for..."))
-                .addBooleanOption(option =>
-                    option.setName('multiple').setRequired(true)
-                        .setDescription('Whether or not you want multiple results.')))
+                    option.setName('category')
+                        .setDescription("The category in mystic's dialogue to search for...")))
 
         // Enchant
         .addSubcommand(subcommand =>
             subcommand.setName('enchant')
                 .setDescription('Find a certain enchant.')
                 .addStringOption(option =>
-                    option.setName('name').setRequired(true)
-                        .setDescription('The name to search for...'))
-                .addBooleanOption(option =>
-                    option.setName('multiple').setRequired(true)
-                        .setDescription('Whether or not you want multiple results.')))
+                    option.setName('name')
+                        .setDescription('The name to search for...')))
 
         .setDescription('Replies with data based on the input.'),
     async execute(interaction) {
@@ -115,12 +116,41 @@ module.exports = {
             }
         }
 
-        const multiple = getOption('multiple') != undefined ? getOption('multiple').value : false
+        /**
+         * @param {Number} val 
+         * @param {Number} min 
+         * @param {Number} max 
+         * @returns {Boolean}
+         */
+        const testRange = (val, min, max) => val >= min && val <= max;
+
+        /**
+         * @param {Number} val 
+         * @param {Number} min 
+         * @param {Number} max 
+         * @param {Number} exact 
+         * @returns {Boolean}
+         */
+        const testRangeOrEquality = (val, min, max, exact) => testRange(val, min, max) || val == exact;
+
+        /**
+         * 
+         * @param {String} optionName 
+         * @param {String} valueName 
+         * @returns {Boolean}
+         */
+        const testQueryHeader = (entry, optionName, valueName) => {
+            if (getOption(optionName) != undefined) {
+                const value = getOption(optionName).value.toLowerCase()
+                return (entry[valueName].toLowerCase()).includes(value);
+            } else return true
+        }
+
         const pages = []
         const validEntries = []
         let pageCount = 0
 
-        const reqs = ((reqNames) => {
+        const getReqs = (reqNames) => {
             let result = {}
             for (let index = 0; index < reqNames.length; index++) {
                 const reqName = reqNames[index];
@@ -138,21 +168,59 @@ module.exports = {
                         }
                     }
                     // If not, check if the input is actually a number.
+                } else if (option.value.includes('-') || option.value.includes('+')) {
+                    // Check if there is a + or - after number
+                    const value = parseInt(option.value)
+                    const opp = option.value[value.toString().length]
+                    if (opp == '+') {
+                        result[reqName] = {
+                            min: value,
+                            max: 100
+                        }
+                    } else {
+                        result[reqName] = {
+                            min: 0,
+                            max: value
+                        }
+                    }
                 } else if (parseInt(option.value)) {
                     result[reqName] = parseInt(option.value)
                 }
             }
             return result
-        })(talentReqNames)
+        }
 
         switch (sheetName) {
             case 'talent': {
                 const sheet = getSheet(sheetName + 's')
+                const reqs = getReqs(talentReqNames)
 
                 // Determine entries
                 for (let index = 0; index < sheet.length; index++) {
                     const entry = sheet[index];
                     let valid = true
+
+                    /**
+                     * @param {String} groupName 
+                     * @param {Function} testFunc
+                     * @param {Function} reduceFunc 
+                     */
+                    const testGroupHeaders = (entry, groupName, testFunc, reduceFunc) => {
+                        if (entry[groupName]) {
+                            for (let index = 0; index < Object.keys(reqs).length; index++) {
+                                const headerName = Object.keys(reqs)[index]
+                                const optionReq = reqs[headerName]
+                                const entryReq = parseInt(entry[groupName][headerName])
+
+                                // Check if req is a range 
+                                if (testFunc.call(entryReq, optionReq.min, optionReq.max, optionReq)) reduceFunc.call()
+                            }
+                        }
+                    }
+
+                    const setValid = (val, fromWhere = '') => {
+                        valid = val
+                    }
 
                     // Reduce to testHeaders
                     // Check if it meets reqs OR even has 'reqs' as a value
@@ -163,31 +231,14 @@ module.exports = {
                             const entryReq = parseInt(entry["reqs"][reqName])
 
                             // Check if req is a range 
-                            if (optionReq["min"] && optionReq["max"]) {
-                                if (!(entryReq >= optionReq.min && entryReq <= optionReq.max)) valid = false;
-                            } else {
-                                if (!(entryReq == optionReq)) valid = false;
-                            }
+                            if (!testRangeOrEquality(entryReq, optionReq.min, optionReq.max, optionReq)) setValid(false, 'Test Range or Equality');
                         }
                     }
 
-                    // Reduce these functions to testHeader
-                    if (getOption('talent_name') != undefined) {
-                        const talentName = getOption('talent_name').value.toLowerCase()
-                        if (!(entry["talent"].toLowerCase()).includes(talentName)) valid = false;
-                    }
-                    if (getOption('category') != undefined) {
-                        const category = getOption('category').value.toLowerCase()
-                        if (!(entry["category"].toLowerCase()).includes((category))) valid = false;
-                    }
-                    if (getOption('description') != undefined) {
-                        const description = getOption('description').value.toLowerCase()
-                        if (!(entry["description"].toLowerCase()).includes((description))) valid = false;
-                    }
-                    if (getOption('rarity') != undefined) {
-                        const rarity = getOption('rarity').value.toLowerCase()
-                        if (!(entry["rarity"].toLowerCase()).includes((rarity))) valid = false;
-                    }
+                    if (!testQueryHeader(entry, 'talent_name', 'talent')) setValid(false, 'Test Query Header (talent_name)');
+                    if (!testQueryHeader(entry, 'category', 'category')) setValid(false, 'Test Query Header (category)');
+                    if (!testQueryHeader(entry, 'description', 'description')) setValid(false, 'Test Query Header (description)');
+                    if (!testQueryHeader(entry, 'rarity', 'rarity')) setValid(false, 'Test Query Header (rarity)');
 
                     if (valid) {
                         validEntries.push(entry)
@@ -210,9 +261,9 @@ module.exports = {
                             .setTitle(`Talent: ${talentName}`)
                             .setTimestamp()
                             .addFields(
-                                { name: 'Description:', value: '```'+`${entry['description']}`+'```'},
-                                { name: 'Category:', value: '```'+`${entry['category']}`+'```', inline: true },
-                                { name: 'Rarity:', value: '```'+`${entry['rarity']}`+'```', inline: true },
+                                { name: 'Description:', value: '```' + `${entry['description']}` + '```' },
+                                { name: 'Category:', value: '```' + `${entry['category']}` + '```', inline: true },
+                                { name: 'Rarity:', value: '```' + `${entry['rarity']}` + '```', inline: true },
                                 //{ name: 'Requirements:', value: '```'+`${entry['formatted_reqs']}`+'```' },
                             )
                             .setFooter({ text: `Displaying ${validEntries.length >= 5 ? 5 : validEntries.length} of ${validEntries.length} results.` });
@@ -227,13 +278,13 @@ module.exports = {
                         let reqResults = ''
                         for (let reqIndex = 0; reqIndex < Object.keys(entry["reqs"]).length; reqIndex++) {
                             const reqName = Object.keys(entry["reqs"])[reqIndex];
-                            
+
                             if (!parseInt(entry["reqs"][reqName]) > 0) continue;
 
                             reqResults += `${replaceAll(capitalize(reqName), '_', ' ')}: ${entry["reqs"][reqName]}\n`
                         }
 
-                        if (reqResults != '') embed.addFields({ name: 'Requirements', value: '```'+`${reqResults}`+'```'})
+                        if (reqResults != '') embed.addFields({ name: 'Requirements', value: '```' + `${reqResults}` + '```' })
 
                         pages.push(embed)
                     }
