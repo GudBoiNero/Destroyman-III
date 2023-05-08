@@ -4,6 +4,7 @@ const { PagesBuilder, PagesManager } = require('discord.js-pages');
 const { replaceAll } = require('../util/replaceAll');
 
 const talentReqNames = ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"]
+const mantraReqNames = ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"]
 const pagesManager = new PagesManager();
 
 /**
@@ -16,7 +17,7 @@ const setSubcommandOrder = (subcommand, orderByOptions) => {
 
         for (let index = 0; index < orderByOptions.length; index++) {
             const header = orderByOptions[index];
-            option.addChoices({name: header, value: header})
+            option.addChoices({ name: header, value: header })
         }
     })
     return subcommand
@@ -25,7 +26,6 @@ const setSubcommandOrder = (subcommand, orderByOptions) => {
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('find')
-
         // Talent
         .addSubcommand(subcommand => {
             subcommand.setName('talent')
@@ -53,19 +53,27 @@ module.exports = {
                 )
             }
 
-            //subcommand = setSubcommandOrder(subcommand, talentReqNames.concat(['category', 'rarity', 'talent_name', 'description']))
-
             return subcommand
         })
-
         // Mantra
-        .addSubcommand(subcommand =>
+        .addSubcommand(subcommand => {
             subcommand.setName('mantra')
                 .setDescription('Find a certain mantra.')
                 .addStringOption(option =>
                     option.setName('mantra_name')
-                        .setDescription('The name to search for...')))
+                        .setDescription('The name to search for...'));
 
+            // Exact Reqs
+            for (let index = 0; index < mantraReqNames.length; index++) {
+                const name = mantraReqNames[index];
+
+                subcommand.addStringOption(option =>
+                    option.setName(`${name}`).setDescription(`Maximum requirement of ${name}. int:int to denote minimum / maximum.`)
+                )
+            }
+
+            return subcommand
+        })
         // Weapon
         .addSubcommand(subcommand =>
             subcommand.setName('weapon')
@@ -73,7 +81,6 @@ module.exports = {
                 .addStringOption(option =>
                     option.setName('weapon_name')
                         .setDescription('The name to search for...')))
-
         // Outfit        
         .addSubcommand(subcommand =>
             subcommand.setName('outfit')
@@ -81,7 +88,6 @@ module.exports = {
                 .addStringOption(option =>
                     option.setName('outfit_name')
                         .setDescription('The name to search for...')))
-
         // Mystic
         .addSubcommand(subcommand =>
             subcommand.setName('mystic')
@@ -89,7 +95,6 @@ module.exports = {
                 .addStringOption(option =>
                     option.setName('category')
                         .setDescription("The category in mystic's dialogue to search for...")))
-
         // Enchant
         .addSubcommand(subcommand =>
             subcommand.setName('enchant')
@@ -218,10 +223,6 @@ module.exports = {
                         }
                     }
 
-                    const setValid = (val, fromWhere = '') => {
-                        valid = val
-                    }
-
                     // Reduce to testHeaders
                     // Check if it meets reqs OR even has 'reqs' as a value
                     if (entry["reqs"]) {
@@ -231,14 +232,14 @@ module.exports = {
                             const entryReq = parseInt(entry["reqs"][reqName])
 
                             // Check if req is a range 
-                            if (!testRangeOrEquality(entryReq, optionReq.min, optionReq.max, optionReq)) setValid(false, 'Test Range or Equality');
+                            if (!testRangeOrEquality(entryReq, optionReq.min, optionReq.max, optionReq)) valid = false;
                         }
                     }
 
-                    if (!testQueryHeader(entry, 'talent_name', 'talent')) setValid(false, 'Test Query Header (talent_name)');
-                    if (!testQueryHeader(entry, 'category', 'category')) setValid(false, 'Test Query Header (category)');
-                    if (!testQueryHeader(entry, 'description', 'description')) setValid(false, 'Test Query Header (description)');
-                    if (!testQueryHeader(entry, 'rarity', 'rarity')) setValid(false, 'Test Query Header (rarity)');
+                    if (!testQueryHeader(entry, 'talent_name', 'talent')) valid = false;
+                    if (!testQueryHeader(entry, 'category', 'category'))  valid = false;
+                    if (!testQueryHeader(entry, 'description', 'description')) valid = false;
+                    if (!testQueryHeader(entry, 'rarity', 'rarity')) valid = false;
 
                     if (valid) {
                         validEntries.push(entry)

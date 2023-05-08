@@ -25096,7 +25096,7 @@
 			"weight": "8.5",
 			"range": "9.2",
 			"swing_speed": "0.67x",
-			"endlag": "0s",
+			"endlag": "0.25s",
 			"requirements": "",
 			"miscellaneous": "",
 			"completed": "",
