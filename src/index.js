@@ -72,6 +72,8 @@ client.on(Events.InteractionCreate, async interaction => {
 
 	if (interaction.commandName == "update") {
 		// Restart
+		client.destroy()
+		client.login(CLIENT_TOKEN)
 	}
 })
 

@@ -29,10 +29,10 @@ module.exports = {
                     }
 
                     const successEmbed = new EmbedBuilder().setTitle('Successfully Updated!')
-                        .addFields(
+                        /*.addFields(
                             { name: 'stdout', value: '```' + `\n ${stdout} \n` + '```' },
                             { name: 'stderr', value: '```' + `\n ${stderr} \n` + '```' }
-                        )
+                        )*/
                         .setColor('Green')
                         .setFooter({text: 'The changes will not apply until the bot has been restarted.'})
                         .setTimestamp()
