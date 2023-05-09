@@ -1,6 +1,7 @@
 const { SlashCommandBuilder, CommandInteraction, } = require('discord.js')
 const { AUTHORIZED_USERS, GITHUB_PRIVATE_KEY } = require('../config.json')
 const { exec } = require('child_process')
+const { consoleColors } = require('../util/consoleColors')
  
 module.exports = {
     data: new SlashCommandBuilder()
@@ -19,10 +20,11 @@ module.exports = {
             await interaction.editReply('Pulling from repo...')
             try {
                 const update = exec(`bash update.sh ${GITHUB_PRIVATE_KEY}`, (error, stdout, stderr) => {
-                    console.log(stdout);
-                    console.log(stderr);
+                    console.log(consoleColors.FG_MAGENTA+'Updating...')
+                    console.log(consoleColors.FG_GRAY+stdout);
+                    console.log(consoleColors.FG_GRAY+stderr);
                     if (error !== null) {
-                        console.log(`exec error: ${error}`);
+                        console.log(`exec error: ${consoleColors.FG_RED+error}`);
                     }
                 });
 
