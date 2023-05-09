@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, CommandInteraction, } = require('discord.js')
-const { AUTHORIZED_USERS } = require('../config.json')
+const { AUTHORIZED_USERS, GITHUB_PRIVATE_KEY } = require('../config.json')
 const { exec } = require('child_process')
-
+ 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('update')
@@ -18,7 +18,7 @@ module.exports = {
         if (AUTHORIZED_USERS.includes(userId)) {
             await interaction.editReply('Pulling from repo...')
             try {
-                const update = exec('bash ../../update.sh', (error, stdout, stderr) => {
+                const update = exec(`bash update.sh ${GITHUB_PRIVATE_KEY}`, (error, stdout, stderr) => {
                     console.log(stdout);
                     console.log(stderr);
                     if (error !== null) {
