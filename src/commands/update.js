@@ -17,7 +17,7 @@ module.exports = {
 
         await interaction.deferReply({ephemeral: true})
         if (AUTHORIZED_USERS.includes(userId)) {
-            await interaction.editReply('Pulling from repo...')
+            await interaction.editReply({embeds:[new EmbedBuilder().setTitle('Updating...').setTimestamp()]})
             try {
                 exec(`bash update.sh ${GITHUB_PRIVATE_KEY}`, async (error, stdout, stderr) => {
                     console.log(consoleColors.FG_MAGENTA+'Updating...')
@@ -28,19 +28,19 @@ module.exports = {
                         console.log(`exec error: ${consoleColors.FG_RED+error}`);
                     }
 
-                    const embed = new EmbedBuilder().setTitle('Successfully Updated!')
+                    const successEmbed = new EmbedBuilder().setTitle('Successfully Updated!')
                         .addFields(
                             { name: 'stdout', value:'```'+`${stdout}`+'```' },
                             { name: 'stderr', value:'```'+`${stderr}`+'```' }
                         ).setTimestamp()
 
-                    await interaction.editReply({embeds: [embed]})
+                    await interaction.editReply({embeds: [successEmbed]})
                 });
-            } catch {
-                await interaction.editReply('An error occurred while fetching updating...')
+            } catch (err) {
+                await interaction.editReply({embeds:[new EmbedBuilder().setTitle('An error occurred!').addFields({name: 'err', value: err}).setTimestamp()]})
             }
         } else {
-            await interaction.editReply('You are not an authorized user!')
+            await interaction.editReply({embeds:[new EmbedBuilder().setTitle('You are not an authorized user!').setTimestamp()]})
         }
     }
 }
