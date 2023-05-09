@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, CommandInteraction, } = require('discord.js')
+const { SlashCommandBuilder, CommandInteraction, EmbedBuilder } = require('discord.js')
 const { AUTHORIZED_USERS, GITHUB_PRIVATE_KEY } = require('../config.json')
 const { exec } = require('child_process')
 const { consoleColors } = require('../util/consoleColors')
@@ -19,16 +19,23 @@ module.exports = {
         if (AUTHORIZED_USERS.includes(userId)) {
             await interaction.editReply('Pulling from repo...')
             try {
-                const update = exec(`bash update.sh ${GITHUB_PRIVATE_KEY}`, (error, stdout, stderr) => {
+                exec(`bash update.sh ${GITHUB_PRIVATE_KEY}`, async (error, stdout, stderr) => {
                     console.log(consoleColors.FG_MAGENTA+'Updating...')
                     console.log(consoleColors.FG_GRAY+stdout);
                     console.log(consoleColors.FG_GRAY+stderr);
+                    
                     if (error !== null) {
                         console.log(`exec error: ${consoleColors.FG_RED+error}`);
                     }
-                });
 
-                await interaction.editReply('Successfully updated!')
+                    const embed = new EmbedBuilder().setTitle('Successfully Updated!')
+                        .addFields(
+                            { name: 'stdout', value:'```'+`${stdout}`+'```' },
+                            { name: 'stderr', value:'```'+`${stderr}`+'```' }
+                        ).setTimestamp()
+
+                    await interaction.editReply({embeds: [embed]})
+                });
             } catch {
                 await interaction.editReply('An error occurred while fetching updating...')
             }
