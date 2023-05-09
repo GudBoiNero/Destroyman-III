@@ -1,6 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const jsdom = require('jsdom');
+const childProcess = require("child_process");
 const { JSDOM } = jsdom
 const { consoleColors } = require('../src/util/consoleColors.js')
 const { fetchData } = require('./util/fetchData.js')
@@ -37,8 +38,8 @@ client.on(Events.ClientReady, async () => {
 
 
 	if (REFRESH_DATA) {
-		try { 
-			await fetchData() 
+		try {
+			await fetchData()
 		}
 		catch (err) {
 			console.error(err);
@@ -67,6 +68,10 @@ client.on(Events.InteractionCreate, async interaction => {
 		} else {
 			await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 		}
+	}
+
+	if (interaction.commandName == "update") {
+		// Restart
 	}
 })
 
