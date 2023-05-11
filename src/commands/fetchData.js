@@ -20,7 +20,8 @@ module.exports = {
             try {
                 await fetchData()
                 await interaction.editReply('Successfully Fetched Data!')
-            } catch {
+            } catch (error) {
+                console.error(error)
                 await interaction.editReply('An error occurred while fetching data...')
             }
         } else {

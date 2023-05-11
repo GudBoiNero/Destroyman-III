@@ -47,7 +47,9 @@ module.exports = {
     
             // Parse and grab content
             const rows = sheetContent.childNodes
-    
+
+            if (sheetData.name == 'outfits') {console.log(rows)}
+
             // Grab the key values for each column (Name, Reqs, etc)
             const keys = ((headers) => {
                 const temp = []
@@ -64,10 +66,13 @@ module.exports = {
                 }
                 return temp
             })(sheetData.name != "outfits" ? rows[0].childNodes : rows[1].childNodes) // Outfits tabs first row is not what we need
-    
+            
             // Starts at 1 to prevent parsing data from headers
             for (var rowIndex = 1, rowsLength = rows.length; rowIndex < rowsLength; rowIndex++) {
                 var cellData = {}
+
+                // The data here will always be the headers
+                if (sheetData.name == 'outfits' && rowIndex == 1) continue
     
                 const row = rows[rowIndex]
                 const rowContent = row.childNodes

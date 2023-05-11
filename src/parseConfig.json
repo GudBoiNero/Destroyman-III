@@ -19,7 +19,9 @@
             "attribute__oath": "type",
             "attribute_oath": "type"
         },
-        "weapons": {},
+        "weapons": {
+            "damage_at_100_wpm/elm/wp": "max_damage"
+        },
         "outfits": {
             "requirements": "materials",
             "notes_cost": "cost"
@@ -113,6 +115,19 @@
                 "thundercall",
                 "galebreathe",
                 "shadowcast"
+            ],
+            "stats": [
+                "type",
+                "damage_type",
+                "damage",
+                "max_damage",
+                "penetration",
+                "chip",
+                "scaling",
+                "weight",
+                "range",
+                "swing_speed",
+                "endlag"
             ]
         },
         "outfits": {

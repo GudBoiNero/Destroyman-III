@@ -3,8 +3,13 @@ const { getSheet } = require('../util/queryData')
 const { PagesBuilder, PagesManager } = require('discord.js-pages');
 const { replaceAll } = require('../util/replaceAll');
 
-const talentReqNames = ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"]
-const mantraReqNames = ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"]
+const Requirements = {
+    "Talents": ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"],
+    "Mantras": ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"],
+    "Weapons": ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"],    
+    "Outfits": ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"],
+}
+
 const pagesManager = new PagesManager();
 
 /**
@@ -45,8 +50,8 @@ module.exports = {
                         .setDescription('The rarity to search for...'))
 
             // Exact Reqs
-            for (let index = 0; index < talentReqNames.length; index++) {
-                const name = talentReqNames[index];
+            for (let index = 0; index < Requirements.Talents.length; index++) {
+                const name = Requirements.Talents[index];
 
                 subcommand.addStringOption(option =>
                     option.setName(`${name}`).setDescription(`Maximum requirement of ${name}. int:int to denote minimum / maximum.`)
@@ -64,8 +69,8 @@ module.exports = {
                         .setDescription('The name to search for...'));
 
             // Exact Reqs
-            for (let index = 0; index < mantraReqNames.length; index++) {
-                const name = mantraReqNames[index];
+            for (let index = 0; index < Requirements.Mantras.length; index++) {
+                const name = Requirements.Mantras[index];
 
                 subcommand.addStringOption(option =>
                     option.setName(`${name}`).setDescription(`Maximum requirement of ${name}. int:int to denote minimum / maximum.`)
@@ -198,32 +203,13 @@ module.exports = {
         switch (sheetName) {
             case 'talent': {
                 const sheet = getSheet(sheetName + 's')
-                const reqs = getReqs(talentReqNames)
+                const reqs = getReqs(Requirements.Talents)
 
                 // Determine entries
                 for (let index = 0; index < sheet.length; index++) {
                     const entry = sheet[index];
                     let valid = true
 
-                    /**
-                     * @param {String} groupName 
-                     * @param {Function} testFunc
-                     * @param {Function} reduceFunc 
-                     */
-                    const testGroupHeaders = (entry, groupName, testFunc, reduceFunc) => {
-                        if (entry[groupName]) {
-                            for (let index = 0; index < Object.keys(reqs).length; index++) {
-                                const headerName = Object.keys(reqs)[index]
-                                const optionReq = reqs[headerName]
-                                const entryReq = parseInt(entry[groupName][headerName])
-
-                                // Check if req is a range 
-                                if (testFunc.call(entryReq, optionReq.min, optionReq.max, optionReq)) reduceFunc.call()
-                            }
-                        }
-                    }
-
-                    // Reduce to testHeaders
                     // Check if it meets reqs OR even has 'reqs' as a value
                     if (entry["reqs"]) {
                         for (let reqIndex = 0; reqIndex < Object.keys(reqs).length; reqIndex++) {
@@ -241,9 +227,7 @@ module.exports = {
                     if (!testQueryHeader(entry, 'description', 'description')) valid = false;
                     if (!testQueryHeader(entry, 'rarity', 'rarity')) valid = false;
 
-                    if (valid) {
-                        validEntries.push(entry)
-                    }
+                    if (valid) validEntries.push(entry)
                 }
 
                 // Create pages
@@ -255,11 +239,11 @@ module.exports = {
 
                         if (!entry) continue;
 
-                        const talentName = entry[sheetName]
+                        const entryName = entry[sheetName]
 
                         const embed = new EmbedBuilder()
                             .setColor(0x0099FF)
-                            .setTitle(`Talent: ${talentName}`)
+                            .setTitle(`Talent: ${entryName}`)
                             .setTimestamp()
                             .addFields(
                                 { name: 'Description:', value: '```' + `${entry['description']}` + '```' },
@@ -267,7 +251,6 @@ module.exports = {
                                 { name: 'Rarity:', value: '```' + `${entry['rarity']}` + '```', inline: true },
                                 //{ name: 'Requirements:', value: '```'+`${entry['formatted_reqs']}`+'```' },
                             )
-                            .setFooter({ text: `Displaying ${validEntries.length >= 5 ? 5 : validEntries.length} of ${validEntries.length} results.` });
 
                         // Set requirements
 
@@ -293,7 +276,83 @@ module.exports = {
             } break;
             case 'mantra': {
                 const sheet = getSheet(sheetName + 's')
+                const reqs = getReqs(Requirements.Talents)
 
+                // Determine entries
+                for (let entryIndex = 0; entryIndex < sheet.length; entryIndex++) {
+                    const entry = sheet[entryIndex];
+                    let valid = true
+
+                    // Check if it meets reqs OR even has 'reqs' as a value
+                    if (entry["reqs"]) {
+                        for (let reqIndex = 0; reqIndex < Object.keys(reqs).length; reqIndex++) {
+                            const reqName = Object.keys(reqs)[reqIndex]
+                            const optionReq = reqs[reqName]
+                            const entryReq = parseInt(entry["reqs"][reqName])
+
+                            // Check if req is a range 
+                            if (!testRangeOrEquality(entryReq, optionReq.min, optionReq.max, optionReq)) valid = false;
+                        }
+                    }
+
+                    if (!testQueryHeader(entry, 'mantra_name', 'mantra')) valid = false;
+
+                    if (valid) validEntries.push(entry)
+                }
+
+                // Create Pages
+                pageCount = Math.ceil(validEntries.length / 5)
+                for (let pageIndex = 0; pageIndex < pageCount; pageIndex++) {
+                    // Display the first five entries
+                    for (let entryIndex = 0; entryIndex < 5; entryIndex++) {
+                        const entry = validEntries[entryIndex + (pageIndex * 5)];
+                        if (!entry) continue;
+
+                        const stars = () => {
+                            if (!entry['stars']) return ''
+
+                            const star = '★'
+                            let result = ''
+                            for (let i = 0; i < parseInt(entry['stars']); i++) {
+                                result += star
+                            }
+                            return result
+                        }
+
+                        const entryName = entry[sheetName]
+                        const embed = new EmbedBuilder()
+                            .setColor(0x0099FF)
+                            .setTitle(`Mantra: ${entryName} ` + stars())
+                            .setTimestamp()
+                            .addFields(
+                                { name: 'Description:', value: '```' + `${entry['description']}` + '```' },
+                                { name: 'Category', value: '```' + entry['category'] + '```', inline: true}
+                            )
+                        
+                        if (entry['gif']) { 
+                            embed.setImage(entry['gif'])
+                        }
+
+                        // Set requirements
+                        const capitalize = (word) => {
+                            const lower = word.toLowerCase();
+                            return word.charAt(0).toUpperCase() + lower.slice(1);
+                        }
+
+                        let reqResults = ''
+                        for (let reqIndex = 0; reqIndex < Object.keys(entry["reqs"]).length; reqIndex++) {
+                            const reqName = Object.keys(entry["reqs"])[reqIndex];
+
+                            if (!parseInt(entry["reqs"][reqName]) > 0) continue;
+
+                            reqResults += `${replaceAll(capitalize(reqName), '_', ' ')}: ${entry["reqs"][reqName]}\n`
+                        }
+
+                        if (reqResults != '') embed.addFields({ name: 'Requirements', value: '```' + `${reqResults}` + '```', inline: true })
+
+                        pages.push(embed)
+                    }
+                }
             } break;
             case 'weapon': {
                 const sheet = getSheet(sheetName + 's')
