@@ -58,11 +58,15 @@ module.exports = {
     
                     if (header == headers[0]) continue; // Skip irrelevant header (1)
     
-                    header = header.textContent.toLowerCase()
-                    header = replaceAll(header, ' ', '_')
-                    header = replaceAllInList(header, ['?', '.'], '')
+                    let headerText = header.textContent.toLowerCase()
+                    headerText = replaceAll(headerText, ' ', '_')
+                    headerText = replaceAllInList(headerText, ['?', '.'], '')
+                    headerText = replaceAll(headerText, '/', '_')
+                    headerText = replaceAll(headerText, '__', '_')
+
+                    console.log(headerText)
     
-                    temp.push(header)
+                    temp.push(headerText)
                 }
                 return temp
             })(sheetData.name != "outfits" ? rows[0].childNodes : rows[1].childNodes) // Outfits tabs first row is not what we need

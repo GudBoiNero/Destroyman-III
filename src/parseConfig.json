@@ -20,7 +20,7 @@
             "attribute_oath": "type"
         },
         "weapons": {
-            "damage_at_100_wpm/elm/wp": "max_damage"
+            "damage_at_100_wpn_elm_wp": "max_damage"
         },
         "outfits": {
             "requirements": "materials",

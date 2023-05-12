@@ -6,7 +6,7 @@ const { replaceAll } = require('../util/replaceAll');
 const Requirements = {
     "Talents": ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"],
     "Mantras": ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"],
-    "Weapons": ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"],    
+    "Weapons": ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"],
     "Outfits": ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"],
 }
 
@@ -106,7 +106,14 @@ module.exports = {
                 .setDescription('Find a certain enchant.')
                 .addStringOption(option =>
                     option.setName('name')
-                        .setDescription('The name to search for...')))
+                        .setDescription('The name to search for...'))
+                .addStringOption(option =>
+                    option.setName('type')
+                        .setDescription('The type to search for...')
+                        .addChoices({ name: 'weapon', value: 'weapon'}, { name: 'armor', value: 'armor'}))
+                .addStringOption(option =>
+                    option.setName('description')
+                        .setDescription('The description to search for...')))
 
         .setDescription('Replies with data based on the input.'),
     async execute(interaction) {
@@ -223,7 +230,7 @@ module.exports = {
                     }
 
                     if (!testQueryHeader(entry, 'talent_name', 'talent')) valid = false;
-                    if (!testQueryHeader(entry, 'category', 'category'))  valid = false;
+                    if (!testQueryHeader(entry, 'category', 'category')) valid = false;
                     if (!testQueryHeader(entry, 'description', 'description')) valid = false;
                     if (!testQueryHeader(entry, 'rarity', 'rarity')) valid = false;
 
@@ -326,10 +333,10 @@ module.exports = {
                             .setTimestamp()
                             .addFields(
                                 { name: 'Description:', value: '```' + `${entry['description']}` + '```' },
-                                { name: 'Category', value: '```' + entry['category'] + '```', inline: true}
+                                { name: 'Category', value: '```' + entry['category'] + '```', inline: true }
                             )
-                        
-                        if (entry['gif']) { 
+
+                        if (entry['gif']) {
                             embed.setImage(entry['gif'])
                         }
 
@@ -368,6 +375,41 @@ module.exports = {
             } break;
             case 'enchant': {
                 const sheet = getSheet(sheetName + 's')
+
+                // Determine entries
+                for (let entryIndex = 0; entryIndex < sheet.length; entryIndex++) {
+                    const entry = sheet[entryIndex];
+                    let valid = true
+
+                    if (!testQueryHeader(entry, 'name', 'name')) valid = false;
+                    if (!testQueryHeader(entry, 'description', 'description')) valid = false;
+                    if (!testQueryHeader(entry, 'type', 'type')) valid = false;
+
+                    if (valid) validEntries.push(entry)
+                }
+
+                // Create Pages
+                pageCount = Math.ceil(validEntries.length)
+                for (let pageIndex = 0; pageIndex < pageCount; pageIndex++) {
+                    const entry = validEntries[pageIndex];
+
+                    if (!entry) continue;
+
+                    const entryName = entry['name']
+                    const embed = new EmbedBuilder()
+                        .setColor(0x0099FF)
+                        .setTitle(`Enchant: ${entryName} `)
+                        .setTimestamp()
+                        .addFields(
+                            { name: 'Description:', value: '```' + `${entry['description']}` + '```', inline:true }
+                        )
+
+                    if (entry['gif']) {
+                        embed.setImage(entry['gif'])
+                    }
+
+                    pages.push(embed)
+                }
 
             } break;
         }
