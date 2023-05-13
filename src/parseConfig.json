@@ -139,6 +139,17 @@
                 "intelligence",
                 "willpower",
                 "charisma"
+            ],
+            "resistances": [
+                "physical_resistance",
+                "slash_resistance",
+                "blunt_resistance",
+                "elemental_resistance",
+                "flame_resistance",
+                "ice_resistance",
+                "thunder_resistance",
+                "wind_resistance",
+                "shadow_resistance"
             ]
         },
         "mystic": {},

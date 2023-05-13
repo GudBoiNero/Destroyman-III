@@ -7,8 +7,10 @@ const Requirements = {
     "Talents": ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"],
     "Mantras": ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"],
     "Weapons": ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"],
-    "Outfits": ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"],
+    "Outfits": ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma"],
 }
+
+const OutfitResistances = ["physical_resistance", "slash_resistance", "blunt_resistance", "elemental_resistance", "flame_resistance", "ice_resistance", "thunder_resistance", "wind_resistance", "shadow_resistance"]
 
 const pagesManager = new PagesManager();
 
@@ -87,12 +89,44 @@ module.exports = {
                     option.setName('weapon_name')
                         .setDescription('The name to search for...')))
         // Outfit        
-        .addSubcommand(subcommand =>
+       /* .addSubcommand(subcommand => {
             subcommand.setName('outfit')
                 .setDescription('Find a certain weapon.')
                 .addStringOption(option =>
                     option.setName('outfit_name')
-                        .setDescription('The name to search for...')))
+                        .setDescription('The name to search for...'))
+                .addStringOption(option =>
+                    option.setName('durability')
+                        .setDescription('The name to search for...'))
+                .addStringOption(option =>
+                    option.setName('ether_regen')
+                        .setDescription('The name to search for...'))
+                .addStringOption(option =>
+                    option.setName('extra_stealth')
+                        .setDescription('The name to search for...'))
+                .addStringOption(option =>
+                    option.setName('cost')
+                        .setDescription('The name to search for...'))
+            
+            // Exact Reqs
+            for (let index = 0; index < Requirements.Outfits.length; index++) {
+                const name = Requirements.Outfits[index];
+
+                subcommand.addStringOption(option =>
+                    option.setName(`${name}`).setDescription(`Maximum requirement of ${name}. int:int to denote minimum / maximum.`)
+                )
+            }
+            
+            for (let index = 0; index < OutfitResistances.length; index++) {
+                const name = OutfitResistances[index];
+
+                subcommand.addStringOption(option =>
+                    option.setName(`${name}`).setDescription(`Maximum requirement of ${name}. int:int to denote minimum / maximum.`)
+                )
+            }
+
+            return subcommand
+        })*/
         // Mystic
         .addSubcommand(subcommand =>
             subcommand.setName('mystic')
@@ -372,8 +406,43 @@ module.exports = {
             case 'outfit': {
                 const sheet = getSheet(sheetName + 's')
 
+                // Determine entries
+                for (let entryIndex = 0; entryIndex < sheet.length; entryIndex++) {
+                    const entry = sheet[entryIndex];
+                    let valid = true
+
+                    if (!testQueryHeader(entry, 'name', 'name')) valid = false;
+                    if (!testQueryHeader(entry, 'description', 'description')) valid = false;
+                    if (!testQueryHeader(entry, 'type', 'type')) valid = false;
+
+                    if (valid) validEntries.push(entry)
+                }
+
+                // Create Pages
+                pageCount = Math.ceil(validEntries.length)
+                for (let pageIndex = 0; pageIndex < pageCount; pageIndex++) {
+                    const entry = validEntries[pageIndex];
+
+                    if (!entry) continue;
+
+                    const entryName = entry['name']
+                    const embed = new EmbedBuilder()
+                        .setColor(0x0099FF)
+                        .setTitle(`Enchant: ${entryName} `)
+                        .setTimestamp()
+                        .addFields(
+                            { name: 'Description:', value: '```' + `${entry['description']}` + '```', inline:true }
+                        )
+
+                    if (entry['gif']) {
+                        embed.setImage(entry['gif'])
+                    }
+
+                    pages.push(embed)
+                }
+
             } break;
-            case 'enchant': {
+        case 'enchant': {
                 const sheet = getSheet(sheetName + 's')
 
                 // Determine entries
