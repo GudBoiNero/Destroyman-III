@@ -9,6 +9,7 @@
   "author": "GudBoiNero#6650",
   "license": "ISC",
   "dependencies": {
+    "canvas": "^2.11.2",
     "discord.js": "^14.9.0",
     "discord.js-pages": "^1.4.4",
     "jsdom": "^21.1.1",

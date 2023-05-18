@@ -1,10 +1,12 @@
-const { SlashCommandBuilder, EmbedBuilder, SlashCommandSubcommandBuilder } = require('discord.js')
+const { SlashCommandBuilder, EmbedBuilder, AttachmentBuilder } = require('discord.js')
 const { getSheet } = require('../util/queryData')
 const { PagesBuilder, PagesManager } = require('discord.js-pages');
 const { replaceAll } = require('../util/replaceAll');
-const { Requirements, QueryHelper, setRequirements, capitalize } = require('../util/findUtil')
+const { Requirements, QueryHelper, setRequirements, capitalize } = require('../util/findUtil');
+const { makeOutfitPng } = require('../util/makeOutfitPng');
 const OutfitResistances = ["physical_resistance", "slash_resistance", "blunt_resistance", "elemental_resistance", "flame_resistance", "ice_resistance", "thunder_resistance", "wind_resistance", "shadow_resistance"]
-
+const fs = require('fs')
+const path = require('path')
 const pagesManager = new PagesManager();
 
 module.exports = {
@@ -12,7 +14,7 @@ module.exports = {
         builder.setName('find_outfit')
             .setDescription('Find a certain outfit.')
             .addStringOption(option =>
-                option.setName('outfit_name')
+                option.setName('name')
                     .setDescription('The name to search for...'))
             .addStringOption(option =>
                 option.setName('durability')
@@ -43,21 +45,48 @@ module.exports = {
         const validEntries = []
 
         const sheet = getSheet(sheetName + 's')
-        const reqs = helper.getReqs(Requirements.Outfits)
-        const resistanceReqs = helper.getReqs(OutfitResistances)
+        const reqs = helper.getRanges(Requirements.Outfits)
+        const resistanceReqs = helper.getRanges(OutfitResistances)
 
         // Determine entries
         for (let entryIndex = 0; entryIndex < sheet.length; entryIndex++) {
             const entry = sheet[entryIndex];
             let valid = true
 
-            if (!helper.testQueryHeader(entry, 'outfit_name', 'outfit')) valid = false;
+            if (!helper.testQueryHeader(entry, 'name', 'outfit')) valid = false;
 
-            let req = helper.getReqs(['cost'])['cost']
+            let req = helper.getRanges(['cost'])['cost']
             if (req && entry['cost']) {
                 if (!helper.testRangeOrEquality(parseInt(entry['cost']), req.min, req.max, req)) valid = false;
             } else if (req && !entry['cost']) { valid = false }
 
+            if (entry['materials']) {
+                const materials = (entry['materials']).split(',')
+                for (let materialIndex = 0; materialIndex < materials.length; materialIndex++) {
+                    let materialStr = materials[materialIndex];
+
+                    // Remove empty text
+                    if (materialStr == '') { 
+                        materials.splice(materialIndex); 
+                        continue; 
+                    }
+
+                    // Trim white space
+                    materialStr = materialStr.trim()
+
+                    let regex = new RegExp(/x(\d+)|\d+/)
+                    let res = regex.exec(materialStr)
+
+                    if (!res) continue;
+
+                    const material = {
+                        mat: replaceAll(replaceAll(res.input, res[0], '').trim().toLowerCase(), ' ', '_'),
+                        amt: parseInt(res[1])
+                    }
+
+                    materials[materialIndex] = material
+                }
+            }
 
             // Check if it meets reqs OR even has 'reqs' as a value
             if (entry["reqs"]) {
@@ -99,16 +128,17 @@ module.exports = {
             const embed = new EmbedBuilder()
                 .setColor(0x0099FF)
                 .setTitle(`Outfit: ${entryName} `)
-                .setTimestamp() 
+                .setTimestamp()
                 .addFields(
-                    { name: 'Cost:', value: '```' + `${entry['cost']} Notes` + '```', inline: true },
-                    { name: 'Durability:', value: '```' + `${entry['durability']}` + '```', inline: true },
-                    { name: 'Stealth:', value: '```' + `${entry['extra_stealth']}` + '```', inline: true },
-                    { name: 'Ether Regen:', value: '```' + `${entry['ether_regen']}` + '```', inline: true },
+                    { name: '\u200B', value: `**Cost:** ${entry['cost']} Notes`, inline: true },
+                    { name: '\u200B', value: `**Durability:** ${entry['durability']}`, inline: true },
+                    { name: '\u200B', value: '\u200B', inline: true },
+                    { name: '\u200B', value: `**Extra Stealth:** ${entry['extra_stealth']}`, inline: true },
+                    { name: '\u200B', value: `**Ether Regen:** ${entry['ether_regen']}`, inline: true },
                 )
 
             if (entry['image']) {
-                embed.setImage(entry['image'])
+                embed.setThumbnail(entry['image'])
             }
 
             pages.push(embed)

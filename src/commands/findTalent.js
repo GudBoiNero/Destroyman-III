@@ -11,7 +11,7 @@ module.exports = {
         builder.setName('find_talent')
             .setDescription('Find a certain talent.')
             .addStringOption(option =>
-                option.setName('talent_name')
+                option.setName('name')
                     .setDescription('The name to search for...'))
             .addStringOption(option =>
                 option.setName('category')
@@ -40,7 +40,7 @@ module.exports = {
         const validEntries = []
 
         const sheet = getSheet(sheetName + 's')
-        const reqs = helper.getReqs(Requirements.Talents)
+        const reqs = helper.getRanges(Requirements.Talents)
 
         // Determine entries
         for (let index = 0; index < sheet.length; index++) {
@@ -61,7 +61,7 @@ module.exports = {
                 }
             }
 
-            if (!helper.testQueryHeader(entry, 'talent_name', 'talent')) valid = false;
+            if (!helper.testQueryHeader(entry, 'name', 'talent')) valid = false;
             if (!helper.testQueryHeader(entry, 'category', 'category')) valid = false;
             if (!helper.testQueryHeader(entry, 'description', 'description')) valid = false;
             if (!helper.testQueryHeader(entry, 'rarity', 'rarity')) valid = false;

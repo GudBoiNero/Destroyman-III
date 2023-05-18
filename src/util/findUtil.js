@@ -85,7 +85,7 @@ module.exports = {
          * @param {String[]} reqNames 
          * @returns 
          */
-        getReqs = (reqNames) => {
+        getRanges = (reqNames) => {
             let result = {}
             for (let index = 0; index < reqNames.length; index++) {
                 const reqName = reqNames[index];
@@ -96,7 +96,8 @@ module.exports = {
                 // Check if the value is a range
                 if (option.value.includes(':')) {
                     let reqRange = option.value.split(':')
-                    if (parseInt(reqRange[0]) && parseInt(reqRange[1])) {
+                    // !isNaN prevents it from thinking 0 == false in this case
+                    if (!isNaN(parseInt(reqRange[0])) && !isNaN(parseInt(reqRange[1]))) {
                         result[reqName] = {
                             min: Math.min(parseInt(reqRange[0]), parseInt(reqRange[1])),
                             max: Math.max(parseInt(reqRange[0]), parseInt(reqRange[1]))
@@ -119,7 +120,7 @@ module.exports = {
                             max: value
                         }
                     }
-                } else if (parseInt(option.value)) {
+                } else if (!isNaN(parseInt(option.value))) {
                     result[reqName] = parseInt(option.value)
                 }
             }

@@ -48,8 +48,6 @@ module.exports = {
             // Parse and grab content
             const rows = sheetContent.childNodes
 
-            if (sheetData.name == 'outfits') {console.log(rows)}
-
             // Grab the key values for each column (Name, Reqs, etc)
             const keys = ((headers) => {
                 const temp = []
@@ -114,12 +112,8 @@ module.exports = {
     
                 data.push(cellData)
             }
-    
-            //console.log(consoleColors.FG_GRAY + `| ${rows.length} Entries`)
-    
             parsedData[sheetData.name] = data
         }
-    
         //#endregion
     
         //#region config
@@ -148,7 +142,7 @@ module.exports = {
                             .reduce((acc, key) => {
                                 acc[key] = entry[key];
                                 return acc;
-                            }, {});
+                        }, {});
                     }
                 }
     
@@ -178,7 +172,7 @@ module.exports = {
         //#endregion
     
         // Write to file
-        const dataFilePath = 'res/raw_data/latest.data.json'
+        const dataFilePath = 'res/data/latest.data.json'
         fs.writeFileSync(dataFilePath, JSON.stringify(parsedData, null, "\t"))
         console.log(consoleColors.FG_MAGENTA + `Written to '${dataFilePath}'!`)
     }
