@@ -61,9 +61,10 @@ module.exports = {
             } else if (req && !entry['cost']) { valid = false }
 
             if (entry['materials']) {
+                const newMaterials = []
                 const materials = (entry['materials']).split(',')
                 for (let materialIndex = 0; materialIndex < materials.length; materialIndex++) {
-                    let materialStr = materials[materialIndex];
+                    let materialStr = (entry['materials']).split(',')[materialIndex];
 
                     // Remove empty text
                     if (materialStr == '') { 
@@ -74,18 +75,20 @@ module.exports = {
                     // Trim white space
                     materialStr = materialStr.trim()
 
-                    let regex = new RegExp(/x(\d+)|\d+/)
+                    let regex = new RegExp(/x(\d+)|(\d+)/)
                     let res = regex.exec(materialStr)
+                    console.log(res)
 
-                    if (!res) continue;
+                    if (!res || !res[0] || !res[1]) continue;
 
                     const material = {
-                        mat: replaceAll(replaceAll(res.input, res[0], '').trim().toLowerCase(), ' ', '_'),
-                        amt: parseInt(res[1])
+                        mat: replaceAll(res.input, res[0], '').trim(),
+                        amt: parseInt(res[1] | res[2])
                     }
 
-                    materials[materialIndex] = material
+                    newMaterials[materialIndex] = material
                 }
+                entry["materials"] = newMaterials
             }
 
             // Check if it meets reqs OR even has 'reqs' as a value
@@ -130,16 +133,25 @@ module.exports = {
                 .setTitle(`Outfit: ${entryName} `)
                 .setTimestamp()
                 .addFields(
-                    { name: '\u200B', value: `**Cost:** ${entry['cost']} Notes`, inline: true },
-                    { name: '\u200B', value: `**Durability:** ${entry['durability']}`, inline: true },
-                    { name: '\u200B', value: '\u200B', inline: true },
-                    { name: '\u200B', value: `**Extra Stealth:** ${entry['extra_stealth']}`, inline: true },
-                    { name: '\u200B', value: `**Ether Regen:** ${entry['ether_regen']}`, inline: true },
+                    { name: 'Cost', value: '```'+`${entry['cost']} Notes`+'```', inline: true },
+                    { name: 'Durability', value: '```'+`${entry['durability']}`+'```', inline: true },
+                    { name: '\u000B', value: '\u000B' },
+                    { name: 'Extra Stealth', value: '```'+`${entry['extra_stealth']}`+'```', inline: true },
+                    { name: 'Ether Regen', value: '```'+`${entry['ether_regen']}`+'```', inline: true },
                 )
 
             if (entry['image']) {
                 embed.setThumbnail(entry['image'])
             }
+
+            let matResults = ''
+            const materials = entry['materials']
+            console.log(materials)
+            for (let matIndex = 0; matIndex < materials.length; matIndex++) {
+                matResults += `${replaceAll(capitalize(materials[matIndex].mat), '_', ' ')}: ${materials[matIndex].amt}\n`
+            }
+
+            if (matResults) embed.addFields({name: 'Materials', value: '```'+`${matResults}`+'```'});
 
             pages.push(embed)
         }

@@ -34,14 +34,11 @@ module.exports = {
         //#endregion
     
         //#region parse_data
-        console.log(consoleColors.FG_MAGENTA + 'Parsing Data...')
         // Parse data in sheets and add to parsedData
         for (var sheetIndex = 0, sheetsLength = sheets.length; sheetIndex < sheetsLength; sheetIndex++) {
             const sheetData = sheets[sheetIndex]
             const sheet = sheetData.element
             const sheetContent = sheet.getElementsByClassName('waffle')[0].childNodes[1] // Grabs <tbody> of <table class="waffle"...>
-    
-            // console.log(consoleColors.FG_GRAY + `| Parsing '${sheetData.name.toLowerCase()}' Sheet...`)
     
             const data = []
     
@@ -61,8 +58,6 @@ module.exports = {
                     headerText = replaceAllInList(headerText, ['?', '.'], '')
                     headerText = replaceAll(headerText, '/', '_')
                     headerText = replaceAll(headerText, '__', '_')
-
-                    console.log(headerText)
     
                     temp.push(headerText)
                 }
