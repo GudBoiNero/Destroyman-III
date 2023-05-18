@@ -6,7 +6,7 @@ const { consoleColors } = require('../util/consoleColors')
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('update')
-        .setDescription('Pulls new data from the github repo, and restarts the bot.'),
+        .setDescription('Pulls new data from the github repo.'),
     /**
      * 
      * @param { CommandInteraction } interaction 
@@ -21,18 +21,12 @@ module.exports = {
             try {
                 exec(`bash update.sh ${GITHUB_PRIVATE_KEY}`, async (error, stdout, stderr) => {
                     console.log(consoleColors.FG_MAGENTA + 'Updating...')
-                    console.log(consoleColors.FG_GRAY + stdout);
-                    console.log(consoleColors.FG_GRAY + stderr);
 
                     if (error !== null) {
-                        console.log(`exec error: ${consoleColors.FG_RED + error}`);
+                        console.log(consoleColors.FG_RED +`exec error: ${error}`);
                     }
 
                     const successEmbed = new EmbedBuilder().setTitle('Successfully Updated!')
-                        /*.addFields(
-                            { name: 'stdout', value: '```' + `\n ${stdout} \n` + '```' },
-                            { name: 'stderr', value: '```' + `\n ${stderr} \n` + '```' }
-                        )*/
                         .setColor('Green')
                         .setFooter({text: 'The changes will not apply until the bot has been restarted.'})
                         .setTimestamp()
