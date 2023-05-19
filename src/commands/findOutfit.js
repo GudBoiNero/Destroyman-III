@@ -3,10 +3,7 @@ const { getSheet } = require('../util/queryData')
 const { PagesBuilder, PagesManager } = require('discord.js-pages');
 const { replaceAll } = require('../util/replaceAll');
 const { Requirements, QueryHelper, setRequirements, capitalize } = require('../util/findUtil');
-const { makeOutfitPng } = require('../util/makeOutfitPng');
 const OutfitResistances = ["physical_resistance", "slash_resistance", "blunt_resistance", "elemental_resistance", "flame_resistance", "ice_resistance", "thunder_resistance", "wind_resistance", "shadow_resistance"]
-const fs = require('fs')
-const path = require('path')
 const pagesManager = new PagesManager();
 
 module.exports = {
