@@ -19,7 +19,7 @@ module.exports = {
         if (AUTHORIZED_USERS.includes(userId)) {
             await interaction.editReply({ embeds: [new EmbedBuilder().setTitle('Updating...').setTimestamp()] })
             try {
-                exec(`bash update.sh ${GITHUB_PRIVATE_KEY}`, async (error, stdout, stderr) => {
+                exec(`bash src/update.sh ${GITHUB_PRIVATE_KEY}`, async (error, stdout, stderr) => {
                     console.log(consoleColors.FG_MAGENTA + 'Updating...')
 
                     console.log(consoleColors.FG_BLUE+stdout)
