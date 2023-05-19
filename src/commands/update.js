@@ -19,8 +19,6 @@ module.exports = {
         if (AUTHORIZED_USERS.includes(userId)) {
             await interaction.editReply({ embeds: [new EmbedBuilder().setTitle('Updating...').setTimestamp()] })
             try {
-                exec(`node .`)
-                interaction.client.destroy()
                 exec(`bash update.sh ${GITHUB_PRIVATE_KEY}`, async (error, stdout, stderr) => {
                     console.log(consoleColors.FG_MAGENTA + 'Updating...')
 
@@ -37,6 +35,8 @@ module.exports = {
 
                     await interaction.editReply({ embeds: [successEmbed] })
                 });
+                exec(`node .`)
+                interaction.client.destroy()
             } catch (err) {
                 await interaction.editReply({ 
                     embeds: [new EmbedBuilder().setTitle('An error occurred!')
