@@ -4,6 +4,7 @@ const jsdom = require('jsdom');
 const { JSDOM } = jsdom
 const { consoleColors } = require('../src/util/consoleColors.js')
 const { fetchData } = require('./util/fetchData.js')
+const { initWebhook } = require('./util/webhook.js')
 
 const { Client, GatewayIntentBits, Collection, Events, REST, Routes } = require('discord.js')
 const { CLIENT_TOKEN, CLIENT_ID, REFRESH_DATA } = require('./config.json');
@@ -35,6 +36,7 @@ for (const file of commandFiles) {
 client.on(Events.ClientReady, async () => {
 	console.log(consoleColors.FG_GREEN + 'Ready!')
 
+	initWebhook()
 
 	if (REFRESH_DATA) {
 		try {
