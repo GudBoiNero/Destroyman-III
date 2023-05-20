@@ -1,4 +1,4 @@
-const secret = "your_secret_here";
+const secret = "FfaF4gs%a7Hh4^gds68!#hGG";
 
 const http = require('http');
 const crypto = require('crypto');
@@ -17,5 +17,6 @@ module.exports = {
     
             res.end();
         }).listen(8080);
+        //
     }
 }
