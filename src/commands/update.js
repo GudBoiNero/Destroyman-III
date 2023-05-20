@@ -18,9 +18,10 @@ module.exports = {
         await interaction.deferReply({ ephemeral: true })
 
         if (!ALLOW_UPDATING) {
-            await interaction.editReply({ 
+            return await interaction.editReply({ 
                 embeds: [
-                    new EmbedBuilder().setTitle('Updating has been disabled!')
+                    new EmbedBuilder().setTitle('Update Failed!')
+                    .setFooter({text: 'Updating has been disabled!'})
                     .setTimestamp()
                     .setColor('Red')
                 ] 
@@ -50,7 +51,8 @@ module.exports = {
                 interaction.client.destroy()
             } catch (err) {
                 await interaction.editReply({ 
-                    embeds: [new EmbedBuilder().setTitle('An error occurred!')
+                    embeds: [new EmbedBuilder().setTitle('Update Failed!')
+                    .setFooter({text: 'An error occurred.'})
                     .addFields({ name: 'err', value: err })
                     .setTimestamp()
                     .setColor('Red')
@@ -60,7 +62,8 @@ module.exports = {
         } else {
             await interaction.editReply({ 
                 embeds: [
-                    new EmbedBuilder().setTitle('You are not an authorized user!')
+                    new EmbedBuilder().setTitle('Update Failed!')
+                    .setFooter({text: 'You are not an authorized user!'})
                     .setTimestamp()
                     .setColor('Red')
                 ] 

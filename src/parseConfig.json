@@ -20,6 +20,7 @@
             "attribute_oath": "type"
         },
         "weapons": {
+            "requirements": {"name": "power", "type": "number"},
             "damage_at_100_wpn_elm_wp": "max_damage",
             "penetration": {"type": "number"},
             "chip": {"type": "number"},
@@ -105,6 +106,7 @@
         },
         "weapons": {
             "reqs": [
+                "power",
                 "strength",
                 "fortitude",
                 "agility",

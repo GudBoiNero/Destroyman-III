@@ -135,17 +135,32 @@ module.exports = {
 
                             switch (replacement.type) {
                                 case "boolean": { newVal = Boolean(val) } break;
-                                case "number": { newVal = parseFloat(val) } break;
+                                case "number": { 
+                                    newVal = parseFloat(val) 
+                                    if (newVal == NaN) {
+                                        // Attempt to regex our way through.
+
+                                        /* Test this
+                                         * console.log(parseFloat("Power 6"))
+                                         * console.log(parseFloat("6 Power"))
+                                         */
+
+                                        
+                                    }
+                                } break;
                                 case "object": { newVal = new Object(val) } break;
                                 case "string": { newVal = toString(val) } break;
                                 case "undefined": { newVal = null } break;
                             }
 
+                            console.log(val, replacement, propertyName, newVal)
+                            
+
                             entry[propertyName] = (newVal).toString()
                         }
 
                         if (replacement.name) {
-                            entry[replacement] = entry[propertyName]
+                            entry[replacement.name] = entry[propertyName]
 
                             entry = Object.keys(entry)
                                 .filter(key => key != propertyName)

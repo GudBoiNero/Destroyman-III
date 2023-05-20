@@ -21156,10 +21156,10 @@
 		"weapons": [
 			{
 				"weapon": "Battle Axe",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -21193,10 +21193,10 @@
 			},
 			{
 				"weapon": "Adretian Axe",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -21230,10 +21230,10 @@
 			},
 			{
 				"weapon": "Canorian Axe",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -21267,10 +21267,10 @@
 			},
 			{
 				"weapon": "Iron Birch",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -21304,10 +21304,10 @@
 			},
 			{
 				"weapon": "Halberd",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -21341,10 +21341,10 @@
 			},
 			{
 				"weapon": "Evanspear Handaxe Bleed",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -21378,10 +21378,10 @@
 			},
 			{
 				"weapon": "Night Axe",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -21415,10 +21415,10 @@
 			},
 			{
 				"weapon": "Master Hawk's Handaxe",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -21452,10 +21452,10 @@
 			},
 			{
 				"weapon": "Relic Axe",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -21489,10 +21489,10 @@
 			},
 			{
 				"weapon": "Enforcer's Axe",
-				"requirements": "Power 6",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -21526,10 +21526,10 @@
 			},
 			{
 				"weapon": "Skyreap Blade",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -21563,10 +21563,10 @@
 			},
 			{
 				"weapon": "Alloyed Canorian Axe",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -21600,10 +21600,10 @@
 			},
 			{
 				"weapon": "Alloyed Halberd",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -21637,10 +21637,10 @@
 			},
 			{
 				"weapon": "Avenger",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -21674,10 +21674,10 @@
 			},
 			{
 				"weapon": "Zweihänder",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "10",
 					"fortitude": "0",
 					"agility": "0",
@@ -21711,10 +21711,10 @@
 			},
 			{
 				"weapon": "Markor's Inheritor",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "10",
 					"fortitude": "0",
 					"agility": "0",
@@ -21748,10 +21748,10 @@
 			},
 			{
 				"weapon": "Crescent Cleaver Bleed",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "10",
 					"fortitude": "0",
 					"agility": "0",
@@ -21785,10 +21785,10 @@
 			},
 			{
 				"weapon": "Darksteel Greatsword",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "10",
 					"fortitude": "0",
 					"agility": "0",
@@ -21822,10 +21822,10 @@
 			},
 			{
 				"weapon": "Inquisitor's Straight Sword",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -21859,10 +21859,10 @@
 			},
 			{
 				"weapon": "First Light",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -21896,10 +21896,10 @@
 			},
 			{
 				"weapon": "Alloyed Zweihänder",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "10",
 					"fortitude": "0",
 					"agility": "0",
@@ -21933,10 +21933,10 @@
 			},
 			{
 				"weapon": "Alloyed Crescent Cleaver Bleed",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "10",
 					"fortitude": "0",
 					"agility": "0",
@@ -21970,10 +21970,10 @@
 			},
 			{
 				"weapon": "Darkalloy Greatsword",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "10",
 					"fortitude": "0",
 					"agility": "0",
@@ -22007,10 +22007,10 @@
 			},
 			{
 				"weapon": "Kyrscleave Bleed",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -22044,10 +22044,10 @@
 			},
 			{
 				"weapon": "Railblade",
-				"requirements": "Power 10",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -22081,10 +22081,10 @@
 			},
 			{
 				"weapon": "Enforcer's Blade",
-				"requirements": "Power 6",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "25",
 					"fortitude": "0",
 					"agility": "0",
@@ -22118,10 +22118,10 @@
 			},
 			{
 				"weapon": "Steel Maul",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "10",
 					"fortitude": "0",
 					"agility": "0",
@@ -22155,10 +22155,10 @@
 			},
 			{
 				"weapon": "Forge Greathammer",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "10",
 					"fortitude": "0",
 					"agility": "0",
@@ -22192,10 +22192,10 @@
 			},
 			{
 				"weapon": "Great Maul",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "30",
 					"fortitude": "0",
 					"agility": "0",
@@ -22229,10 +22229,10 @@
 			},
 			{
 				"weapon": "Pale Morning",
-				"requirements": "Power 10",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "10",
 					"fortitude": "0",
 					"agility": "0",
@@ -22266,10 +22266,10 @@
 			},
 			{
 				"weapon": "Petra's Anchor",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "10",
 					"fortitude": "0",
 					"agility": "0",
@@ -22303,10 +22303,10 @@
 			},
 			{
 				"weapon": "Alloyed Steel Maul",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "10",
 					"fortitude": "0",
 					"agility": "0",
@@ -22340,10 +22340,10 @@
 			},
 			{
 				"weapon": "Enforcer's Hammer",
-				"requirements": "Power 10",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "25",
 					"fortitude": "0",
 					"agility": "0",
@@ -22377,10 +22377,10 @@
 			},
 			{
 				"weapon": "Hivelord's Hubris",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "60",
 					"fortitude": "0",
 					"agility": "0",
@@ -22414,10 +22414,10 @@
 			},
 			{
 				"weapon": "Stiletto",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -22451,10 +22451,10 @@
 			},
 			{
 				"weapon": "Gilded Knife",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -22488,10 +22488,10 @@
 			},
 			{
 				"weapon": "Silver Dagger",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -22525,10 +22525,10 @@
 			},
 			{
 				"weapon": "Canor Fang",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -22562,10 +22562,10 @@
 			},
 			{
 				"weapon": "Whaling Knife",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -22599,10 +22599,10 @@
 			},
 			{
 				"weapon": "Champion's Dagger",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -22636,10 +22636,10 @@
 			},
 			{
 				"weapon": "Central Dirk",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -22673,10 +22673,10 @@
 			},
 			{
 				"weapon": "Tanto",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -22710,10 +22710,10 @@
 			},
 			{
 				"weapon": "Nemit's Sickle",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -22747,10 +22747,10 @@
 			},
 			{
 				"weapon": "Krulian Knife",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -22784,10 +22784,10 @@
 			},
 			{
 				"weapon": "Kyrsedge",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -22821,10 +22821,10 @@
 			},
 			{
 				"weapon": "Alloyed Whaling Knife",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -22858,10 +22858,10 @@
 			},
 			{
 				"weapon": "Alloyed Tanto",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -22895,10 +22895,10 @@
 			},
 			{
 				"weapon": "Fist",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -22932,10 +22932,10 @@
 			},
 			{
 				"weapon": "Iron Cestus",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -22969,10 +22969,10 @@
 			},
 			{
 				"weapon": "Legion Cestus",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23006,10 +23006,10 @@
 			},
 			{
 				"weapon": "Jus Karita",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23043,10 +23043,10 @@
 			},
 			{
 				"weapon": "Flamekeeper Cestus",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23080,10 +23080,10 @@
 			},
 			{
 				"weapon": "Light's Final Toll",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23117,10 +23117,10 @@
 			},
 			{
 				"weapon": "Silversix",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23154,10 +23154,10 @@
 			},
 			{
 				"weapon": "Flintlock",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23191,10 +23191,10 @@
 			},
 			{
 				"weapon": "Revolver",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23228,10 +23228,10 @@
 			},
 			{
 				"weapon": "Dragoon",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23265,10 +23265,10 @@
 			},
 			{
 				"weapon": "Quickfang",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23302,10 +23302,10 @@
 			},
 			{
 				"weapon": "Apprentice Rapier",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23339,10 +23339,10 @@
 			},
 			{
 				"weapon": "Inquisitor's Thorn",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23376,10 +23376,10 @@
 			},
 			{
 				"weapon": "Crucible Rapier",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23413,10 +23413,10 @@
 			},
 			{
 				"weapon": "Skullpiercer Bleed",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23450,10 +23450,10 @@
 			},
 			{
 				"weapon": "Kyrstreza",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23487,10 +23487,10 @@
 			},
 			{
 				"weapon": "Sword",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23524,10 +23524,10 @@
 			},
 			{
 				"weapon": "Messer",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23561,10 +23561,10 @@
 			},
 			{
 				"weapon": "Falchion",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23598,10 +23598,10 @@
 			},
 			{
 				"weapon": "Scimitar",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23635,10 +23635,10 @@
 			},
 			{
 				"weapon": "Katana",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23672,10 +23672,10 @@
 			},
 			{
 				"weapon": "Worshipper Longsword",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23709,10 +23709,10 @@
 			},
 			{
 				"weapon": "Officer Saber",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23746,10 +23746,10 @@
 			},
 			{
 				"weapon": "Vigil Longsword",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23783,10 +23783,10 @@
 			},
 			{
 				"weapon": "Champion's Sword",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23820,10 +23820,10 @@
 			},
 			{
 				"weapon": "Cavalry Saber",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23857,10 +23857,10 @@
 			},
 			{
 				"weapon": "Shotel",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23894,10 +23894,10 @@
 			},
 			{
 				"weapon": "Warden Ceromonial Sword",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23931,10 +23931,10 @@
 			},
 			{
 				"weapon": "Razor Cutlass Bleed",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -23968,10 +23968,10 @@
 			},
 			{
 				"weapon": "Forgotten Gladius",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24005,10 +24005,10 @@
 			},
 			{
 				"weapon": "Serpent's Edge",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24042,10 +24042,10 @@
 			},
 			{
 				"weapon": "Hallowscleave",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24079,10 +24079,10 @@
 			},
 			{
 				"weapon": "Alloyed Messer",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24116,10 +24116,10 @@
 			},
 			{
 				"weapon": "Alloyed Falchion",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24153,10 +24153,10 @@
 			},
 			{
 				"weapon": "Alloyed Vigil Longsword",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24190,10 +24190,10 @@
 			},
 			{
 				"weapon": "Alloyed Shotel",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24227,10 +24227,10 @@
 			},
 			{
 				"weapon": "Kyrsblade",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24264,10 +24264,10 @@
 			},
 			{
 				"weapon": "Shattered Katana",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24301,10 +24301,10 @@
 			},
 			{
 				"weapon": "Irontusk",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24338,10 +24338,10 @@
 			},
 			{
 				"weapon": "Iron Spear",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24375,10 +24375,10 @@
 			},
 			{
 				"weapon": "Gremorian Longspear",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24412,10 +24412,10 @@
 			},
 			{
 				"weapon": "Ritual Spear",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24449,10 +24449,10 @@
 			},
 			{
 				"weapon": "Acheron's Warspear Bleed",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24486,10 +24486,10 @@
 			},
 			{
 				"weapon": "Trident Spear",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24523,10 +24523,10 @@
 			},
 			{
 				"weapon": "Serrated Warspear",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24560,10 +24560,10 @@
 			},
 			{
 				"weapon": "Alloyed Gremorian Longspear",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24597,10 +24597,10 @@
 			},
 			{
 				"weapon": "Rifle Spear",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24634,10 +24634,10 @@
 			},
 			{
 				"weapon": "Alloyed Trident Spear",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24671,10 +24671,10 @@
 			},
 			{
 				"weapon": "True Seraph Spear",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24708,10 +24708,10 @@
 			},
 			{
 				"weapon": "Kyrsglaive Bleed",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24745,10 +24745,10 @@
 			},
 			{
 				"weapon": "Mace",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24782,10 +24782,10 @@
 			},
 			{
 				"weapon": "Sacred Hammer",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24819,10 +24819,10 @@
 			},
 			{
 				"weapon": "Rosen's Peacemaker",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24856,10 +24856,10 @@
 			},
 			{
 				"weapon": "Iron Blunderbuss",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24893,10 +24893,10 @@
 			},
 			{
 				"weapon": "Hero's Blade Of Flame",
-				"requirements": "Power 11",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24930,10 +24930,10 @@
 			},
 			{
 				"weapon": "Hero's Blade Of Lightning",
-				"requirements": "Power 11",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -24967,10 +24967,10 @@
 			},
 			{
 				"weapon": "Hero's Blade Of Frost",
-				"requirements": "Power 11",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -25004,10 +25004,10 @@
 			},
 			{
 				"weapon": "Hero's Blade Of Wind",
-				"requirements": "Power 11",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -25041,10 +25041,10 @@
 			},
 			{
 				"weapon": "Hero's Blade Of Shadow",
-				"requirements": "Power 11",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -25078,10 +25078,10 @@
 			},
 			{
 				"weapon": "Curved Blade Of Winds",
-				"requirements": "Power 10",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -25115,10 +25115,10 @@
 			},
 			{
 				"weapon": "Crypt Blade",
-				"requirements": "Power 10",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -25152,10 +25152,10 @@
 			},
 			{
 				"weapon": "Gran Sudaruska",
-				"requirements": "Power 10",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -25189,10 +25189,10 @@
 			},
 			{
 				"weapon": "Targe",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "10",
 					"agility": "0",
@@ -25226,10 +25226,10 @@
 			},
 			{
 				"weapon": "Old World Greatshield",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "20",
 					"agility": "0",
@@ -25263,10 +25263,10 @@
 			},
 			{
 				"weapon": "Kite Shield",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "30",
 					"agility": "0",
@@ -25300,10 +25300,10 @@
 			},
 			{
 				"weapon": "Worshipper's Shield",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "45",
 					"agility": "0",
@@ -25337,10 +25337,10 @@
 			},
 			{
 				"weapon": "Ethirion Curseshield",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "50",
 					"agility": "0",
@@ -25374,10 +25374,10 @@
 			},
 			{
 				"weapon": "Khan Shield",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "60",
 					"agility": "0",
@@ -25411,10 +25411,10 @@
 			},
 			{
 				"weapon": "The Path's Defender",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "75",
 					"agility": "0",
@@ -25448,10 +25448,10 @@
 			},
 			{
 				"weapon": "Parry Dagger",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "10",
@@ -25485,10 +25485,10 @@
 			},
 			{
 				"weapon": "Kyrstear",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "40",
@@ -25522,10 +25522,10 @@
 			},
 			{
 				"weapon": "Silversix Offhand",
-				"requirements": "",
 				"miscellaneous": "Swing speed lowers with different weapon types",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -25559,10 +25559,10 @@
 			},
 			{
 				"weapon": "Flintlock Offhand",
-				"requirements": "",
 				"miscellaneous": "Swing speed lowers with different weapon types",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -25596,10 +25596,10 @@
 			},
 			{
 				"weapon": "Revolver Offhand",
-				"requirements": "",
 				"miscellaneous": "Swing speed lowers with different weapon types",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -25633,10 +25633,10 @@
 			},
 			{
 				"weapon": "Dragoon Offhand",
-				"requirements": "",
 				"miscellaneous": "Swing speed lowers with different weapon types",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -25670,10 +25670,10 @@
 			},
 			{
 				"weapon": "False Memory",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -25707,10 +25707,10 @@
 			},
 			{
 				"weapon": "Divine Axe",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -25744,10 +25744,10 @@
 			},
 			{
 				"weapon": "Divine Greatsword",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -25781,10 +25781,10 @@
 			},
 			{
 				"weapon": "Divine Spear",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -25818,10 +25818,10 @@
 			},
 			{
 				"weapon": "Divine Longsword",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -25855,10 +25855,10 @@
 			},
 			{
 				"weapon": "Divine Dagger",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -25892,10 +25892,10 @@
 			},
 			{
 				"weapon": "Divine Flintlock",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
@@ -25929,10 +25929,10 @@
 			},
 			{
 				"weapon": "Flareblood Kamas",
-				"requirements": "",
 				"miscellaneous": "",
 				"completed": "",
 				"reqs": {
+					"power": "NaN",
 					"strength": "0",
 					"fortitude": "0",
 					"agility": "0",
