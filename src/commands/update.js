@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, CommandInteraction, EmbedBuilder } = require('discord.js')
-const { AUTHORIZED_USERS, GITHUB_PRIVATE_KEY } = require('../config.json')
+const { AUTHORIZED_USERS, GITHUB_PRIVATE_KEY, ALLOW_UPDATING } = require('../config.json')
 const { exec } = require('child_process')
 const { consoleColors } = require('../util/consoleColors')
 
@@ -16,6 +16,17 @@ module.exports = {
         const userId = user.id;
 
         await interaction.deferReply({ ephemeral: true })
+
+        if (!ALLOW_UPDATING) {
+            await interaction.editReply({ 
+                embeds: [
+                    new EmbedBuilder().setTitle('Updating has been disabled!')
+                    .setTimestamp()
+                    .setColor('Red')
+                ] 
+            })
+        }
+
         if (AUTHORIZED_USERS.includes(userId)) {
             await interaction.editReply({ embeds: [new EmbedBuilder().setTitle('Updating...').setTimestamp()] })
             try {

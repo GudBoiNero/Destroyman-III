@@ -33,20 +33,6 @@ const setSubcommandOrder = (subcommand, orderByOptions) => {
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('find')
-        // Weapon
-        .addSubcommand(subcommand =>
-            subcommand.setName('weapon')
-                .setDescription('Find a certain weapon.')
-                .addStringOption(option =>
-                    option.setName('weapon_name')
-                        .setDescription('The name to search for...')))
-        // Mystic
-        .addSubcommand(subcommand =>
-            subcommand.setName('mystic')
-                .setDescription('Find a certain mystic option.')
-                .addStringOption(option =>
-                    option.setName('category')
-                        .setDescription("The category in mystic's dialogue to search for...")))
         // Enchant
         .addSubcommand(subcommand =>
             subcommand.setName('enchant')
@@ -155,54 +141,7 @@ module.exports = {
         }
 
         switch (sheetName) {
-            case 'weapon': {
-                const sheet = getSheet(sheetName + 's')
-
-            } break;
-            case 'mystic': {
-                const sheet = getSheet(sheetName)
-
-            } break;
-            case 'outfit': {
-                const sheet = getSheet(sheetName + 's')
-
-                // Determine entries
-                for (let entryIndex = 0; entryIndex < sheet.length; entryIndex++) {
-                    const entry = sheet[entryIndex];
-                    let valid = true
-
-                    if (!testQueryHeader(entry, 'name', 'name')) valid = false;
-                    if (!testQueryHeader(entry, 'description', 'description')) valid = false;
-                    if (!testQueryHeader(entry, 'type', 'type')) valid = false;
-
-                    if (valid) validEntries.push(entry)
-                }
-
-                // Create Pages
-                pageCount = Math.ceil(validEntries.length)
-                for (let pageIndex = 0; pageIndex < pageCount; pageIndex++) {
-                    const entry = validEntries[pageIndex];
-
-                    if (!entry) continue;
-
-                    const entryName = entry['name']
-                    const embed = new EmbedBuilder()
-                        .setColor(0x0099FF)
-                        .setTitle(`Enchant: ${entryName} `)
-                        .setTimestamp()
-                        .addFields(
-                            { name: 'Description:', value: '```' + `${entry['description']}` + '```', inline:true }
-                        )
-
-                    if (entry['gif']) {
-                        embed.setImage(entry['gif'])
-                    }
-
-                    pages.push(embed)
-                }
-
-            } break;
-        case 'enchant': {
+            case 'enchant': {
                 const sheet = getSheet(sheetName + 's')
 
                 // Determine entries

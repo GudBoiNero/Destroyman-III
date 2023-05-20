@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, CommandInteraction, } = require('discord.js')
+const { SlashCommandBuilder, CommandInteraction, EmbedBuilder } = require('discord.js')
 const { AUTHORIZED_USERS } = require('../config.json')
 const { fetchData } = require('../util/fetchData.js')
 
@@ -16,16 +16,33 @@ module.exports = {
 
         await interaction.deferReply({ephemeral: true})
         if (AUTHORIZED_USERS.includes(userId)) {
-            await interaction.editReply('Fetching Data...')
+            await interaction.editReply({ embeds: [new EmbedBuilder().setTitle('Fetching Data...').setTimestamp()] })
             try {
                 await fetchData()
-                await interaction.editReply('Successfully Fetched Data!')
+                const successEmbed = new EmbedBuilder().setTitle('Successfully Fetched Data!')
+                        .setColor('Green')
+                        .setFooter({text: 'Written to `latest.data.json`.'})
+                        .setTimestamp()
+
+                    await interaction.editReply({ embeds: [successEmbed] })
             } catch (error) {
                 console.error(error)
-                await interaction.editReply('An error occurred while fetching data...')
+                await interaction.editReply({ 
+                    embeds: [new EmbedBuilder().setTitle('An error occurred!')
+                    .addFields({ name: 'err', value: err })
+                    .setTimestamp()
+                    .setColor('Red')
+                    ] 
+                })
             }
         } else {
-            await interaction.editReply('You are not an authorized user!')
+            await interaction.editReply({ 
+                embeds: [
+                    new EmbedBuilder().setTitle('You are not an authorized user!')
+                    .setTimestamp()
+                    .setColor('Red')
+                ] 
+            })
         }
     }
 }
