@@ -20,7 +20,12 @@
             "attribute_oath": "type"
         },
         "weapons": {
-            "damage_at_100_wpn_elm_wp": "max_damage"
+            "requirements": {"name": "power", "type": "number"},
+            "damage_at_100_wpn_elm_wp": "max_damage",
+            "penetration": {"type": "number"},
+            "chip": {"type": "number"},
+            "swing_speed": {"type": "number"},
+            "endlag": {"type": "number"}
         },
         "outfits": {
             "requirements": "materials",
@@ -101,6 +106,7 @@
         },
         "weapons": {
             "reqs": [
+                "power",
                 "strength",
                 "fortitude",
                 "agility",
@@ -118,7 +124,6 @@
             ],
             "stats": [
                 "type",
-                "damage_type",
                 "damage",
                 "max_damage",
                 "penetration",
@@ -128,6 +133,9 @@
                 "range",
                 "swing_speed",
                 "endlag"
+            ],
+            "damage_types": [
+                "damage_type"
             ]
         },
         "outfits": {

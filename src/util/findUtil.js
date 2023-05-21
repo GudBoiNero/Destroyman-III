@@ -1,11 +1,90 @@
 const { CommandInteraction, SlashCommandBuilder } = require('discord.js')
 
+// https://stackoverflow.com/questions/1584370/how-to-merge-two-arrays-in-javascript-and-de-duplicate-items
+function arrayUnique(array) {
+    var a = array.concat();
+    for(var i=0; i<a.length; ++i) {
+        for(var j=i+1; j<a.length; ++j) {
+            if(a[i] === a[j])
+                a.splice(j--, 1);
+        }
+    }
+
+    return a;
+}
+
 module.exports = {
-    Requirements: {
-        "Talents": ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"],
-        "Mantras": ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"],
-        "Weapons": ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma", "flamecharm", "frostdraw", "thundercall", "galebreathe", "shadowcast", "medium_wep", "heavy_wep", "light_wep"],
-        "Outfits": ["power", "strength", "fortitude", "agility", "intelligence", "willpower", "charisma"]
+    Requirements: { // Talents and Mantras are always the same (they should be at least)
+        "Talents": [
+            "power", 
+            "strength", 
+            "fortitude", 
+            "agility", 
+            "intelligence", 
+            "willpower", 
+            "charisma", 
+            "flamecharm", 
+            "frostdraw", 
+            "thundercall", 
+            "galebreathe", 
+            "shadowcast", 
+            "ironsing", // :eyes:
+            "medium_wep", 
+            "heavy_wep", 
+            "light_wep"
+        ],
+        "Mantras": [
+            "power", 
+            "strength", 
+            "fortitude", 
+            "agility", 
+            "intelligence", 
+            "willpower", 
+            "charisma", 
+            "flamecharm", 
+            "frostdraw", 
+            "thundercall", 
+            "galebreathe", 
+            "shadowcast", 
+            "ironsing", // can't believe it's real (5/20/2023) - pssst. it's not real *yet*...
+            "medium_wep", 
+            "heavy_wep", 
+            "light_wep"
+        ],
+        "Weapons": [
+            "power", 
+            "strength", 
+            "fortitude", 
+            "agility", 
+            "intelligence", 
+            "willpower", 
+            "charisma", 
+            "flamecharm", 
+            "frostdraw", 
+            "thundercall", 
+            "galebreathe", 
+            "shadowcast", 
+            "medium_wep", 
+            "heavy_wep", 
+            "light_wep",
+            "damage",
+            // "max_damage", // whenever this isn't null uncomment it
+            "penetration",
+            "chip",
+            "weight",
+            "range", 
+            "swing_speed",
+            "endlag"
+        ],
+        "Outfits": [
+            "power", 
+            "strength", 
+            "fortitude", 
+            "agility", 
+            "intelligence", 
+            "willpower", 
+            "charisma"
+        ]
     },
     /**
      * 

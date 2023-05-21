@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, CommandInteraction, EmbedBuilder } = require('discord.js')
-const { AUTHORIZED_USERS, GITHUB_PRIVATE_KEY } = require('../config.json')
+const { AUTHORIZED_USERS, GITHUB_PRIVATE_KEY, ALLOW_UPDATING } = require('../config.json')
 const { exec } = require('child_process')
 const { consoleColors } = require('../util/consoleColors')
 
@@ -16,6 +16,18 @@ module.exports = {
         const userId = user.id;
 
         await interaction.deferReply({ ephemeral: true })
+
+        if (!ALLOW_UPDATING) {
+            return await interaction.editReply({ 
+                embeds: [
+                    new EmbedBuilder().setTitle('Update Failed!')
+                    .setFooter({text: 'Updating has been disabled!'})
+                    .setTimestamp()
+                    .setColor('Red')
+                ] 
+            })
+        }
+
         if (AUTHORIZED_USERS.includes(userId)) {
             await interaction.editReply({ embeds: [new EmbedBuilder().setTitle('Updating...').setTimestamp()] })
             try {
@@ -39,7 +51,8 @@ module.exports = {
                 interaction.client.destroy()
             } catch (err) {
                 await interaction.editReply({ 
-                    embeds: [new EmbedBuilder().setTitle('An error occurred!')
+                    embeds: [new EmbedBuilder().setTitle('Update Failed!')
+                    .setFooter({text: 'An error occurred.'})
                     .addFields({ name: 'err', value: err })
                     .setTimestamp()
                     .setColor('Red')
@@ -49,7 +62,8 @@ module.exports = {
         } else {
             await interaction.editReply({ 
                 embeds: [
-                    new EmbedBuilder().setTitle('You are not an authorized user!')
+                    new EmbedBuilder().setTitle('Update Failed!')
+                    .setFooter({text: 'You are not an authorized user!'})
                     .setTimestamp()
                     .setColor('Red')
                 ] 

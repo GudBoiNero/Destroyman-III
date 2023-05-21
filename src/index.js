@@ -35,7 +35,6 @@ for (const file of commandFiles) {
 client.on(Events.ClientReady, async () => {
 	console.log(consoleColors.FG_GREEN + 'Ready!')
 
-
 	if (REFRESH_DATA) {
 		try {
 			await fetchData()

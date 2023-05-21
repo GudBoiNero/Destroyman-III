@@ -8,16 +8,18 @@ Make sure to get v18.6.0 or above.
 Create a `config.json` file inside of `src`. And create two entries within a JSON dictionary-
 ```json
 {
-    "CLIENT_TOKEN": "T0ta11Y.RaNd0MNUM83Rs",
-    "CLIENT_ID": "012345679999",
+    /**** DELETE ALL COMMENTS IN THIS FILE BEFORE RUNNING ****/
+    "CLIENT_TOKEN": "T0ta11Y.RaNd0MNUM83Rs", // Your bot's token
+    "CLIENT_ID": "012345679999", // Your bot's client ID
     "AUTHORIZED_USERS": [
-        "111111111111111"
+        "111111111111111" // Your user ID
     ],
     "GITHUB_PRIVATE_KEY": "T0ta11Y.RaNd0MNUM83Rs19184839",
-    "REFRESH_DATA": true
+    "REFRESH_DATA": true,
+    "ALLOW_UPDATING": true
 }
 ```
-Ensure that `config.json` is added to .gitignore to prevent security issues.
+Ensure that `config.json` is added to .gitignore to prevent security issues. (By default it should always be inside of .gitignore)
 
 #### Running the Bot
 Go to [Discord Applications](https://discord.com/developers/applications) and create a Bot for yourself. 
@@ -25,8 +27,5 @@ Open your command prompt or terminal and `cd` to the location of the bot's folde
 Run `node .` and the bot will start up.
 
 # Notes
+- DO **NOT** EDIT `parseConfig.json`.
 
-### JSON
-- If JSON is mad about comments not being permitted- Check [this](https://stackoverflow.com/questions/47834825/in-vs-code-disable-error-comments-are-not-permitted-in-json) out.
-
-- Ensure that within `parseConfig.json` all `sheet_specific` entries are lowercase. The parser will automatically convert all parsed headers to lowercase, so if your entries are uppercase they will not correctly replace things.
