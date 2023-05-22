@@ -11,12 +11,12 @@ Create a `config.json` file inside of `src`. And create two entries within a JSO
     /**** DELETE ALL COMMENTS IN THIS FILE BEFORE RUNNING ****/
     "CLIENT_TOKEN": "T0ta11Y.RaNd0MNUM83Rs", // Your bot's token
     "CLIENT_ID": "012345679999", // Your bot's client ID
-    "AUTHORIZED_USERS": [
+    "AUTHORIZED_USERS": [ // Which users are allowed to manually update and refresh the data of the bot.
         "111111111111111" // Your user ID
     ],
     "GITHUB_PRIVATE_KEY": "T0ta11Y.RaNd0MNUM83Rs19184839",
-    "REFRESH_DATA": true,
-    "ALLOW_UPDATING": true
+    "REFRESH_DATA": true, // Whether or not the bot refreshes data on startup
+    "ALLOW_UPDATING": true // Whether or not the bot will update on /update
 }
 ```
 Ensure that `config.json` is added to .gitignore to prevent security issues. (By default it should always be inside of .gitignore)
