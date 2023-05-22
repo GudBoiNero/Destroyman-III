@@ -20,9 +20,9 @@ module.exports = {
                 option.setName('description')
                     .setDescription('The description to search for...'))
             .addStringOption(option =>
-                option.setName('rarity')
-                    .addChoices({ name: 'common', value: 'common' }, { name: 'rare', value: 'rare' }, { name: 'advanced', value: 'advanced' })
-                    .setDescription('The rarity to search for...'))
+                option.setName('type')
+                    .addChoices({ name: 'common', value: 'common' }, { name: 'rare', value: 'rare' }, { name: 'advanced', value: 'advanced' }, { name: 'oath', value: 'oath' })
+                    .setDescription('The type of card to search for...'))
             .setDescription('Replies with data based on the input.')
 
         // Exact Reqs
@@ -64,7 +64,7 @@ module.exports = {
             if (!helper.testQueryHeader(entry, 'name', 'talent')) valid = false;
             if (!helper.testQueryHeader(entry, 'category', 'category')) valid = false;
             if (!helper.testQueryHeader(entry, 'description', 'description')) valid = false;
-            if (!helper.testQueryHeader(entry, 'rarity', 'rarity')) valid = false;
+            if (!helper.testQueryHeader(entry, 'type', 'rarity')) valid = false;
 
             if (valid) validEntries.push(entry)
         }
@@ -84,7 +84,7 @@ module.exports = {
                 .addFields(
                     { name: 'Description:', value: '```' + `${entry['description']}` + '```' },
                     { name: 'Category:', value: '```' + `${entry['category']}` + '```', inline: true },
-                    { name: 'Rarity:', value: '```' + `${entry['rarity']}` + '```', inline: true }
+                    { name: 'Type:', value: '```' + `${entry['rarity']}` + '```', inline: true }
                 )
 
             // Set requirements

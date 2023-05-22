@@ -94,6 +94,10 @@ module.exports = {
             if (entry['gif']) {
                 embed.setImage(entry['gif'])
             }
+            
+            if (entry['type']) {
+                embed.addFields({name: 'Mantra Type', value: '```' + `${entry['type']}` + '```', inline: true})
+            }
 
             // Set requirements
             const capitalize = (word) => {

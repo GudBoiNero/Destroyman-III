@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, EmbedBuilder, SlashCommandSubcommandBuilder } = require('discord.js')
 const { getSheet } = require('../util/queryData')
 const { PagesBuilder, PagesManager } = require('discord.js-pages');
-const { replaceAll } = require('../util/replaceAll');
+const { replaceAll, replaceAllInList } = require('../util/replaceAll');
 const { Requirements, QueryHelper, setRequirements, capitalize } = require('../util/findUtil')
 
 const pagesManager = new PagesManager();
@@ -62,13 +62,31 @@ module.exports = {
                 .setColor(0x0099FF)
                 .setTitle(`Weapon: ${entry['weapon']} `)
                 .setTimestamp()
-                .addFields(
-                    { name: 'Attribute', value: '```' + entry['attribute'] + '```', inline: true },
-                    { name: 'Description:', value: '```' + `${entry['description']}` + '```' }
-                )
+
+            let statResults = ''
+            for (let statIndex = 0; statIndex < Object.keys(entry["stats"]).length; statIndex++) {
+                const statName = Object.keys(entry["stats"])[statIndex];
+
+                if (entry["stats"][statName] == "" || entry["stats"][statName] == "0" || entry["stats"][statName] == 0) continue;
+
+                statResults += `${replaceAll(capitalize(statName), '_', ' ')}: ${entry["stats"][statName]}\n`
+            }
+
+            if (statResults != '') embed.addFields({ name: 'Stats', value: '```' + `${statResults}` + '```', inline: true })
+
+
+            let reqResults = ''
+            for (let reqIndex = 0; reqIndex < Object.keys(entry["reqs"]).length; reqIndex++) {
+                const reqName = Object.keys(entry["reqs"])[reqIndex];
+
+                if (!parseInt(entry["reqs"][reqName]) > 0 || parseInt(entry["reqs"][reqName] == NaN)) continue;
+
+                reqResults += `${replaceAll(capitalize(reqName), '_', ' ')}: ${entry["reqs"][reqName]}\n`
+            }
+
+            if (reqResults != '') embed.addFields({ name: 'Requirements', value: '```' + `${reqResults}` + '```' })
 
             pages.push(embed)
-
         }
 
         // Check whether or not the query returned an entry or more

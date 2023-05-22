@@ -54,20 +54,18 @@ module.exports = {
                     if (header == headers[0]) continue; // Skip irrelevant header (1)
 
                     let headerText = header.textContent.toLowerCase()
-                    headerText = replaceAllInList(headerText, [' ', '__', '/'], '_')
+                    headerText = replaceAllInList(headerText, [' ', '/'], '_')
+                    headerText = replaceAllInList(headerText, ['__', '___'], '_')
                     headerText = replaceAllInList(headerText, ['?', '.'], '')
 
                     temp.push(headerText)
                 }
                 return temp
-            })(sheet.name != "outfits" ? rows[0].childNodes : rows[1].childNodes) // Outfits tabs first row is not what we need
+            })(rows[0].childNodes) // Outfits tabs first row is not what we need
 
             // Starts at 1 to prevent parsing data from headers
             for (var rowIndex = 1, rowsLength = rows.length; rowIndex < rowsLength; rowIndex++) {
                 var cellData = {}
-
-                // The data here will always be the headers
-                if (sheet.name == 'outfits' && rowIndex == 1) continue
 
                 const row = rows[rowIndex]
                 const rowContent = row.childNodes
@@ -153,9 +151,6 @@ module.exports = {
                                 case "undefined": { newVal = null } break;
                             }
 
-                            console.log(val, replacement, propertyName, newVal)
-                            
-
                             entry[propertyName] = (newVal).toString()
                         }
 
@@ -205,6 +200,21 @@ module.exports = {
                 });
             }
         }
+
+        //#endregion
+
+        //#region get_extra_data
+
+        /*for (let sheetIndex = 0, length = Object.keys(sheets).length; sheetIndex > length; sheetIndex++) {
+            const sheetName = Object.keys(sheets)[sheetIndex]
+            const sheet = sheets[sheetName]
+
+            switch (sheetName) {
+                case 'talents': {
+
+                } break;
+            }
+        }*/
 
         //#endregion
 
