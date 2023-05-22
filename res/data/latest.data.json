@@ -15259,7 +15259,6 @@
 		"mantras": [
 			{
 				"mantra": "Strong Left",
-				"attribute___oath": "Strength",
 				"stars": "0",
 				"description": "A powerful, flinging punch that shatters the air.",
 				"category": "Combat",
@@ -15269,6 +15268,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1060266781140332575/1060266781371007037/strongleft.gif",
 				"formatted_reqs": "Strength:⠀20⠀",
+				"type": "Strength",
 				"reqs": {
 					"power": "0",
 					"strength": "20",
@@ -15304,7 +15304,6 @@
 			},
 			{
 				"mantra": "Rapid Punches",
-				"attribute___oath": "Strength",
 				"stars": "1",
 				"description": "Unleash a barrage of blows against your foes.\t\n",
 				"category": "Combat",
@@ -15314,6 +15313,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1060267680554287114/1060267680818532422/rapidpunches.gif",
 				"formatted_reqs": "Strength:⠀20⠀",
+				"type": "Strength",
 				"reqs": {
 					"power": "0",
 					"strength": "20",
@@ -15349,7 +15349,6 @@
 			},
 			{
 				"mantra": "Strong Leap",
-				"attribute___oath": "Strength",
 				"stars": "0",
 				"description": "Kick off of the ground with your strength, sending you into the air.\t\n",
 				"category": "Mobility",
@@ -15359,6 +15358,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/de966fbd85d045564abb066e10ab75a1.gif",
 				"formatted_reqs": "Strength:⠀50⠀",
+				"type": "Strength",
 				"reqs": {
 					"power": "0",
 					"strength": "50",
@@ -15394,7 +15394,6 @@
 			},
 			{
 				"mantra": "Tacet Drop Kick",
-				"attribute___oath": "Strength",
 				"stars": "0",
 				"description": "Disguise yourself in tacet and drop kick your enemies.",
 				"category": "Combat",
@@ -15404,6 +15403,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1065706686754586644/1065706687085949008/ezgif.com-gif-maker_4.gif",
 				"formatted_reqs": "Strength:⠀5⠀Light Wep.:⠀Jus Karita, 0⠀",
+				"type": "Strength",
 				"reqs": {
 					"power": "0",
 					"strength": "5",
@@ -15439,7 +15439,6 @@
 			},
 			{
 				"mantra": "Rally",
-				"attribute___oath": "Fortitude",
 				"stars": "0",
 				"description": "Strike your shield a few times to absorb some of the posture received by your allies.\t\n",
 				"category": "Support",
@@ -15449,6 +15448,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/4883fa8d4f2fe8c527eb731a985622c1.gif",
 				"formatted_reqs": "Fortitude:⠀10⠀",
+				"type": "Fortitude",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -15484,7 +15484,6 @@
 			},
 			{
 				"mantra": "Reinforce",
-				"attribute___oath": "Fortitude",
 				"stars": "0",
 				"description": "Buff those around you with extra defence.\t\n",
 				"category": "Support",
@@ -15494,6 +15493,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1065704701108162561/1065704701787652116/Reinforce_gif_1.gif",
 				"formatted_reqs": "Fortitude:⠀50⠀",
+				"type": "Fortitude",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -15529,7 +15529,6 @@
 			},
 			{
 				"mantra": "Brace",
-				"attribute___oath": "Fortitude",
 				"stars": "0",
 				"description": "Brace yourself against attacks and gain hyperarmour.        ",
 				"category": "Support",
@@ -15539,6 +15538,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1065705284716208250/1065705284900749402/043bd734252312e192fe4eec186fe750_1.gif",
 				"formatted_reqs": "Fortitude:⠀75⠀",
+				"type": "Fortitude",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -15574,7 +15574,6 @@
 			},
 			{
 				"mantra": "Shoulder Bash",
-				"attribute___oath": "Fortitude",
 				"stars": "0",
 				"description": "Rush at your enemies with your full physical force.",
 				"category": "Mobility",
@@ -15584,6 +15583,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1065706286370529380/1065706286697680926/shoulder_bash_gif_AdobeExpress_1.gif",
 				"formatted_reqs": "Fortitude:⠀40⠀",
+				"type": "Fortitude",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -15619,7 +15619,6 @@
 			},
 			{
 				"mantra": "Revenge",
-				"attribute___oath": "Agility",
 				"stars": "0",
 				"description": "A vengeful rush.\t\n",
 				"category": "Combat",
@@ -15629,6 +15628,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1065702884991324220/1065702885456875652/dec35cb4e920cd8601583ae762685400_1.gif",
 				"formatted_reqs": "Agility:⠀5⠀",
+				"type": "Agility",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -15664,7 +15664,6 @@
 			},
 			{
 				"mantra": "Adrenaline Surge",
-				"attribute___oath": "Agility",
 				"stars": "0",
 				"description": "An adrenaline rush of mobility.\t",
 				"category": "Support",
@@ -15674,6 +15673,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1065702376620687441/1065702377312759848/3692529e2ae12bef5beebcdcd9021db0_1.gif",
 				"formatted_reqs": "Agility:⠀20⠀",
+				"type": "Agility",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -15709,7 +15709,6 @@
 			},
 			{
 				"mantra": "Dash",
-				"attribute___oath": "Agility",
 				"stars": "0",
 				"description": "An agile dash.\t\n",
 				"category": "Mobility",
@@ -15719,6 +15718,7 @@
 				"completed": "",
 				"gif": "https://media.discordapp.net/attachments/962567620165525514/1065704232734433310/a2c9da9c83d881718ce5e603a21c27d4_2.gif?width=741&height=572",
 				"formatted_reqs": "Agility:⠀40⠀",
+				"type": "Agility",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -15754,7 +15754,6 @@
 			},
 			{
 				"mantra": "Summon Cauldron",
-				"attribute___oath": "Intelligence",
 				"stars": "0",
 				"description": "Make a cauldron appear from your memories.",
 				"category": "Support",
@@ -15764,6 +15763,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1065701979399135232/1065701979667582976/cauldron.gif",
 				"formatted_reqs": "Intelligence:⠀20⠀",
+				"type": "Intelligence",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -15799,7 +15799,6 @@
 			},
 			{
 				"mantra": "Prediction",
-				"attribute___oath": "Intelligence",
 				"stars": "0",
 				"description": "Predict an opponent's attack and reflect it.",
 				"category": "Combat",
@@ -15809,6 +15808,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1060264921889247272/1060264922505814036/prediction.gif",
 				"formatted_reqs": "Intelligence:⠀50⠀",
+				"type": "Intelligence",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -15844,7 +15844,6 @@
 			},
 			{
 				"mantra": "Gaze",
-				"attribute___oath": "Willpower",
 				"stars": "0",
 				"description": "Gaze into your opponent's souls.",
 				"category": "Support",
@@ -15854,6 +15853,7 @@
 				"completed": "",
 				"gif": "https://media.giphy.com/media/Q0vqWftVmENM58uNgD/giphy-downsized-large.gif",
 				"formatted_reqs": "Willpower:⠀30⠀",
+				"type": "Willpower",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -15889,7 +15889,6 @@
 			},
 			{
 				"mantra": "Glare",
-				"attribute___oath": "Willpower and Charisma",
 				"stars": "0",
 				"description": "Opponents facing you are briefly rendered immobile.",
 				"category": "Support",
@@ -15899,6 +15898,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1065705867284054057/1065705867485401161/ezgif.com-gif-maker_26.gif",
 				"formatted_reqs": "Willpower:⠀5⠀Charisma:⠀25⠀",
+				"type": "Willpower and Charisma",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -15934,7 +15934,6 @@
 			},
 			{
 				"mantra": "Exhaustion Strike",
-				"attribute___oath": "Willpower",
 				"stars": "0",
 				"description": "A melee strike that removes your posture's damage on hit.",
 				"category": "Combat",
@@ -15944,6 +15943,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1065703234548801608/1065703234880159825/15c78d9e7099ef26de33cad7bdde01cf_1.gif",
 				"formatted_reqs": "Willpower:⠀40⠀",
+				"type": "Willpower",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -15979,7 +15979,6 @@
 			},
 			{
 				"mantra": "Sing",
-				"attribute___oath": "Charisma",
 				"stars": "0",
 				"description": "Charm those around you with your powerful voice.        ",
 				"category": "Support",
@@ -15989,6 +15988,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/d2188ff95182cec4be4fd679f5d98cfe.gif",
 				"formatted_reqs": "Charisma:⠀25⠀",
+				"type": "Charisma",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16024,7 +16024,6 @@
 			},
 			{
 				"mantra": "Taunt",
-				"attribute___oath": "Charisma",
 				"stars": "0",
 				"description": "Taunt those around you, causing them to be unable to jump and to take more damage. However, in their rage they do extra damage.",
 				"category": "Support",
@@ -16034,6 +16033,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/d92b2d67d3d253b11faab0fd257d0d77.gif",
 				"formatted_reqs": "Charisma:⠀25⠀",
+				"type": "Charisma",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16069,7 +16069,6 @@
 			},
 			{
 				"mantra": "Disguise",
-				"attribute___oath": "Charisma",
 				"stars": "0",
 				"description": "Take on an unimaginable disguise.",
 				"category": "Support",
@@ -16079,6 +16078,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/b0d030ad121e82184f5321a511e29e8d.gif",
 				"formatted_reqs": "Charisma:⠀25⠀",
+				"type": "Charisma",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16114,7 +16114,6 @@
 			},
 			{
 				"mantra": "Rapid Slashes",
-				"attribute___oath": "Light Weapons",
 				"stars": "0",
 				"description": "Rush down your opponent cutting them apart.",
 				"category": "Combat",
@@ -16124,6 +16123,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/774ea6c73a690284327583443a906084.gif",
 				"formatted_reqs": "Light Wep.:⠀30⠀",
+				"type": "Light Weapons",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16159,7 +16159,6 @@
 			},
 			{
 				"mantra": "Master's Flourish",
-				"attribute___oath": "Medium Weapons",
 				"stars": "0",
 				"description": "A powerful slash that chips through block and slashes through armor.",
 				"category": "Combat",
@@ -16169,6 +16168,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1060269786162020412/1060269786451411145/flourish.gif",
 				"formatted_reqs": "Medium Wep.:⠀30⠀",
+				"type": "Medium Weapons",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16204,7 +16204,6 @@
 			},
 			{
 				"mantra": "Prominence Draw",
-				"attribute___oath": "Medium Weapons",
 				"stars": "0",
 				"description": "A slash which moves the user forward and dealing damage upon reaching the target.",
 				"category": "Combat",
@@ -16214,6 +16213,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/e111846178bd9e08bfc0f4e897957173.gif",
 				"formatted_reqs": "Medium Wep.:⠀50⠀",
+				"type": "Medium Weapons",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16249,7 +16249,6 @@
 			},
 			{
 				"mantra": "Punishment",
-				"attribute___oath": "Heavy Weapons",
 				"stars": "0",
 				"description": "Absorb damage then return fury upon your foes.",
 				"category": "Combat",
@@ -16259,6 +16258,7 @@
 				"completed": "",
 				"gif": "https://media.discordapp.net/attachments/922117092994588732/1085293405409648690/punishment.gif",
 				"formatted_reqs": "Heavy Wep.:⠀50⠀",
+				"type": "Heavy Weapons",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16294,7 +16294,6 @@
 			},
 			{
 				"mantra": "Pressure Blast",
-				"attribute___oath": "Heavy Weapons",
 				"stars": "0",
 				"description": "Unleash a powerful pressure blast from the weight of your weapon.",
 				"category": "Combat",
@@ -16304,6 +16303,7 @@
 				"completed": "",
 				"gif": "https://media.discordapp.net/attachments/962567620165525514/1065704943245340702/b4544c8ed8ff8b8bd173745b0541c6d9_1.gif?width=949&height=572",
 				"formatted_reqs": "Heavy Wep.:⠀30⠀",
+				"type": "Heavy Weapons",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16339,7 +16339,6 @@
 			},
 			{
 				"mantra": "Fire Blade",
-				"attribute___oath": "Flamecharm",
 				"stars": "0",
 				"description": "Slicing blades of flame.\n",
 				"category": "Combat",
@@ -16349,6 +16348,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1058675866130989087/1061037563390988345/fire_blade.gif",
 				"formatted_reqs": "Flamecharm:⠀1⠀",
+				"type": "Flamecharm",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16384,7 +16384,6 @@
 			},
 			{
 				"mantra": "Flame Repulsion",
-				"attribute___oath": "Flamecharm",
 				"stars": "0",
 				"description": "An exertion of flames.\n",
 				"category": "Combat",
@@ -16394,6 +16393,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1062797506771165214/1062797507186413768/ezgif.com-gif-maker_21.gif",
 				"formatted_reqs": "Flamecharm:⠀1⠀",
+				"type": "Flamecharm",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16429,7 +16429,6 @@
 			},
 			{
 				"mantra": "Burning Servants",
-				"attribute___oath": "Flamecharm",
 				"stars": "0",
 				"description": "A legion of flames.\n",
 				"category": "Combat",
@@ -16439,6 +16438,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/20daec6e085a1bb9db87093d8de3de34.gif",
 				"formatted_reqs": "Flamecharm:⠀1⠀",
+				"type": "Flamecharm",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16474,7 +16474,6 @@
 			},
 			{
 				"mantra": "Fire Gun",
-				"attribute___oath": "Flamecharm",
 				"stars": "0",
 				"description": "A bullet of flames shot through each hand.\n",
 				"category": "Combat",
@@ -16484,6 +16483,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1058675866130989087/1060236228257128530/fire_gun.gif",
 				"formatted_reqs": "Flamecharm:⠀1⠀",
+				"type": "Flamecharm",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16519,7 +16519,6 @@
 			},
 			{
 				"mantra": "Flame Grab",
-				"attribute___oath": "Flamecharm",
 				"stars": "0",
 				"description": "A fiery chokehold.\n",
 				"category": "Combat",
@@ -16529,6 +16528,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1058675866130989087/1061040774956978196/flame_grab.gif",
 				"formatted_reqs": "Flamecharm:⠀1⠀",
+				"type": "Flamecharm",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16564,7 +16564,6 @@
 			},
 			{
 				"mantra": "Flame Blind",
-				"attribute___oath": "Flamecharm",
 				"stars": "0",
 				"description": "Snap your fingers, shooting a projectile that blinds those who dare gaze at it.\n",
 				"category": "Combat",
@@ -16574,6 +16573,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/e7c3e69bf6320fca306f72f9c86002a3.gif",
 				"formatted_reqs": "Flamecharm:⠀1⠀",
+				"type": "Flamecharm",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16609,7 +16609,6 @@
 			},
 			{
 				"mantra": "Fire Palm",
-				"attribute___oath": "Flamecharm",
 				"stars": "1",
 				"description": "A blast of flame.\n",
 				"category": "Combat",
@@ -16619,6 +16618,7 @@
 				"completed": "",
 				"gif": "https://media.discordapp.net/attachments/1058675866130989087/1060204159552471172/fire_palm.gif",
 				"formatted_reqs": "Flamecharm:⠀20⠀",
+				"type": "Flamecharm",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16654,7 +16654,6 @@
 			},
 			{
 				"mantra": "Fire Eruption",
-				"attribute___oath": "Flamecharm",
 				"stars": "1",
 				"description": "A pyroclastic eruption.\n",
 				"category": "Combat",
@@ -16664,6 +16663,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1058675866130989087/1060234222142488586/fire_eruption.gif",
 				"formatted_reqs": "Flamecharm:⠀20⠀",
+				"type": "Flamecharm",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16699,7 +16699,6 @@
 			},
 			{
 				"mantra": "Fire Forge",
-				"attribute___oath": "Flamecharm",
 				"stars": "1",
 				"description": "Toss a nimble dagger.\n",
 				"category": "Combat",
@@ -16709,6 +16708,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/7abfe65e968f56debc8d78359106c21c.gif",
 				"formatted_reqs": "Flamecharm:⠀20⠀",
+				"type": "Flamecharm",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16744,7 +16744,6 @@
 			},
 			{
 				"mantra": "Rising Flame",
-				"attribute___oath": "Flamecharm",
 				"stars": "2",
 				"description": "A rising tornado of flames.\n",
 				"category": "Combat",
@@ -16754,6 +16753,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1058675866130989087/1060235129215262790/rising_flame.gif",
 				"formatted_reqs": "Flamecharm:⠀30⠀",
+				"type": "Flamecharm",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16789,7 +16789,6 @@
 			},
 			{
 				"mantra": "Flame Assault",
-				"attribute___oath": "Flamecharm",
 				"stars": "2",
 				"description": "Burst forward in flames.\n",
 				"category": "Combat",
@@ -16799,6 +16798,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1058675866130989087/1060207670084239360/flame_assault.gif",
 				"formatted_reqs": "Flamecharm:⠀30⠀",
+				"type": "Flamecharm",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16834,7 +16834,6 @@
 			},
 			{
 				"mantra": "Ash Slam",
-				"attribute___oath": "Flamecharm",
 				"stars": "3",
 				"description": "Strike the ground, turning it to ash.\n",
 				"category": "Combat",
@@ -16844,6 +16843,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1058675866130989087/1061038180884807812/ash_slam.gif",
 				"formatted_reqs": "Strength:⠀30⠀Flamecharm:⠀50⠀",
+				"type": "Flamecharm",
 				"reqs": {
 					"power": "0",
 					"strength": "30",
@@ -16879,7 +16879,6 @@
 			},
 			{
 				"mantra": "Flame Leap",
-				"attribute___oath": "Flamecharm",
 				"stars": "2",
 				"description": "Leap up leaving behind a burst of flames.\n",
 				"category": "Mobility",
@@ -16889,6 +16888,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1058675866130989087/1060601523224203464/flame_leap_g.gif",
 				"formatted_reqs": "Flamecharm:⠀30⠀",
+				"type": "Flamecharm",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16924,7 +16924,6 @@
 			},
 			{
 				"mantra": "Flame Of Denial",
-				"attribute___oath": "Flamecharm",
 				"stars": "0",
 				"description": "Undying flame.\n",
 				"category": "Support",
@@ -16934,6 +16933,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/48c275312eb69bef9fde57421c8b4095.gif",
 				"formatted_reqs": "Flamecharm:⠀1⠀",
+				"type": "Flamecharm",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -16969,7 +16969,6 @@
 			},
 			{
 				"mantra": "Graceful Flame",
-				"attribute___oath": "Flamecharm",
 				"stars": "1",
 				"description": "Conjure an undying flame for the caster and their comrades to rest by.\n",
 				"category": "Support",
@@ -16979,6 +16978,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1058675866130989087/1060604378802819092/graceful.gif",
 				"formatted_reqs": "Flamecharm:⠀20⠀",
+				"type": "Flamecharm",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17014,7 +17014,6 @@
 			},
 			{
 				"mantra": "Flame Wisp",
-				"attribute___oath": "Flamecharm",
 				"stars": "2",
 				"description": "A servant of flames.\n",
 				"category": "Support",
@@ -17024,6 +17023,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/69aee44f7bb8b81b3da07ca9ee4f3ab5.gif",
 				"formatted_reqs": "Flamecharm:⠀30⠀",
+				"type": "Flamecharm",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17059,7 +17059,6 @@
 			},
 			{
 				"mantra": "Ice Spikes",
-				"attribute___oath": "Frostdraw",
 				"stars": "0",
 				"description": "Piercing spikes of ice.\n",
 				"category": "Combat",
@@ -17069,6 +17068,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/f92e518f5b764def381e7898df230a9c.gif",
 				"formatted_reqs": "Frostdraw:⠀1⠀",
+				"type": "Frostdraw",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17104,7 +17104,6 @@
 			},
 			{
 				"mantra": "Ice Beam",
-				"attribute___oath": "Frostdraw",
 				"stars": "0",
 				"description": "Fire a beam of ice.\n",
 				"category": "Combat",
@@ -17114,6 +17113,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/8cd12147f78b4114cdc00ba7b730a676.gif",
 				"formatted_reqs": "Frostdraw:⠀1⠀",
+				"type": "Frostdraw",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17149,7 +17149,6 @@
 			},
 			{
 				"mantra": "Frost Grab",
-				"attribute___oath": "Frostdraw",
 				"stars": "0",
 				"description": "An icy chokehold.\n",
 				"category": "Combat",
@@ -17159,6 +17158,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/f3e6b4c07ae6d6097162e63df2ee89da.gif",
 				"formatted_reqs": "Frostdraw:⠀1⠀",
+				"type": "Frostdraw",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17194,7 +17194,6 @@
 			},
 			{
 				"mantra": "Warden's Blades",
-				"attribute___oath": "Frostdraw",
 				"stars": "0",
 				"description": "Revolving blades of ice.\n",
 				"category": "Combat",
@@ -17204,6 +17203,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/ba9bb1f9dc3b1727f49c8fc1f1b024b8.gif",
 				"formatted_reqs": "Frostdraw:⠀1⠀",
+				"type": "Frostdraw",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17239,7 +17239,6 @@
 			},
 			{
 				"mantra": "Frozen Servants",
-				"attribute___oath": "Frostdraw",
 				"stars": "0",
 				"description": "A legion of frost.\n",
 				"category": "Combat",
@@ -17249,6 +17248,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/6c101c147b1639787f39d319bce23119.gif",
 				"formatted_reqs": "Frostdraw:⠀1⠀",
+				"type": "Frostdraw",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17284,7 +17284,6 @@
 			},
 			{
 				"mantra": "Ice Daggers",
-				"attribute___oath": "Frostdraw",
 				"stars": "1",
 				"description": "Form and toss daggers of ice at your aimed opponent.\n",
 				"category": "Combat",
@@ -17294,6 +17293,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/319ee259d397db61d6ef45cf33bbcf08.gif",
 				"formatted_reqs": "Frostdraw:⠀20⠀",
+				"type": "Frostdraw",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17329,7 +17329,6 @@
 			},
 			{
 				"mantra": "Ice Blade",
-				"attribute___oath": "Frostdraw",
 				"stars": "1",
 				"description": "A barrage of freezing blades.\n",
 				"category": "Combat",
@@ -17339,6 +17338,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/9a77e6475c64dd13efb4d9e30f5ee477.gif",
 				"formatted_reqs": "Frostdraw:⠀20⠀",
+				"type": "Frostdraw",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17374,7 +17374,6 @@
 			},
 			{
 				"mantra": "Ice Chain",
-				"attribute___oath": "Frostdraw",
 				"stars": "1",
 				"description": "Chains of ice.\n",
 				"category": "Combat",
@@ -17384,6 +17383,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/febfbb346f6dd469e62b63bd821a787b.gif",
 				"formatted_reqs": "Frostdraw:⠀20⠀",
+				"type": "Frostdraw",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17419,7 +17419,6 @@
 			},
 			{
 				"mantra": "Ice Forge",
-				"attribute___oath": "Frostdraw",
 				"stars": "1",
 				"description": "Conjure and throw weapons of ice.\n",
 				"category": "Combat",
@@ -17429,6 +17428,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/52ded028ef7f4ecce94017591ce49706.gif",
 				"formatted_reqs": "Frostdraw:⠀20⠀",
+				"type": "Frostdraw",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17464,7 +17464,6 @@
 			},
 			{
 				"mantra": "Ice Eruption",
-				"attribute___oath": "Frostdraw",
 				"stars": "1",
 				"description": "A flurry of ice spikes.\n",
 				"category": "Combat",
@@ -17474,6 +17473,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/58b53bfd728a672a1fffdf46f477c4c1.gif",
 				"formatted_reqs": "Frostdraw:⠀20⠀",
+				"type": "Frostdraw",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17509,7 +17509,6 @@
 			},
 			{
 				"mantra": "Ice Smash",
-				"attribute___oath": "Frostdraw",
 				"stars": "1",
 				"description": "A colossal mace of ice.\n",
 				"category": "Combat",
@@ -17519,6 +17518,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1059957486360199268/1059957486771253258/ice_smash.gif",
 				"formatted_reqs": "Frostdraw:⠀20⠀",
+				"type": "Frostdraw",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17554,7 +17554,6 @@
 			},
 			{
 				"mantra": "Ice Lance",
-				"attribute___oath": "Frostdraw",
 				"stars": "2",
 				"description": "Form an ice spear and lunges forward.\n",
 				"category": "Combat",
@@ -17564,6 +17563,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1060048292165210172/1060048292605603980/lance.gif",
 				"formatted_reqs": "Frostdraw:⠀30⠀",
+				"type": "Frostdraw",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17599,7 +17599,6 @@
 			},
 			{
 				"mantra": "Ice Fissure",
-				"attribute___oath": "Frostdraw",
 				"stars": "3",
 				"description": "Send ice rippling out in a shockwave.\n",
 				"category": "Combat",
@@ -17609,6 +17608,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/3f8af66d380e4fc93360d87b194cb443.gif",
 				"formatted_reqs": "Frostdraw:⠀50⠀",
+				"type": "Frostdraw",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17644,7 +17644,6 @@
 			},
 			{
 				"mantra": "Glacial Arc",
-				"attribute___oath": "Frostdraw",
 				"stars": "1",
 				"description": "An arc of ice.\n",
 				"category": "Mobility",
@@ -17654,6 +17653,7 @@
 				"completed": "",
 				"gif": "https://media.discordapp.net/attachments/1075844217554866217/1075851172910477493/ezgif.com-video-to-gif_5.gif",
 				"formatted_reqs": "Frostdraw:⠀20⠀",
+				"type": "Frostdraw",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17689,7 +17689,6 @@
 			},
 			{
 				"mantra": "Ice Skates",
-				"attribute___oath": "Frostdraw",
 				"stars": "3",
 				"description": "Skate freely on paths of ice.\n",
 				"category": "Mobility",
@@ -17699,6 +17698,7 @@
 				"completed": "",
 				"gif": "https://media.discordapp.net/attachments/1075844217554866217/1075851174282010664/ezgif.com-video-to-gif_7.gif",
 				"formatted_reqs": "Frostdraw:⠀50⠀",
+				"type": "Frostdraw",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17734,7 +17734,6 @@
 			},
 			{
 				"mantra": "Iceberg",
-				"attribute___oath": "Frostdraw",
 				"stars": "3",
 				"description": "Enter a state of cryostasis.\n",
 				"category": "Support",
@@ -17744,6 +17743,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1059958532302176296/1059958532700643419/iceberg.gif",
 				"formatted_reqs": "Frostdraw:⠀50⠀",
+				"type": "Frostdraw",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17779,7 +17779,6 @@
 			},
 			{
 				"mantra": "Crystal Knee",
-				"attribute___oath": "Frostdraw",
 				"stars": "2",
 				"description": "Knock your enemy skyward with a kick of crystal.\n",
 				"category": "Combat",
@@ -17789,6 +17788,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/09f865bb432fe2119878dc2feeaec352.gif",
 				"formatted_reqs": "Frostdraw:⠀30⠀",
+				"type": "Frostdraw",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17824,7 +17824,6 @@
 			},
 			{
 				"mantra": "Crystal Impale",
-				"attribute___oath": "Frostdraw",
 				"stars": "2",
 				"description": "Impale your foes with a brutal crystal smash.\n",
 				"category": "Combat",
@@ -17834,6 +17833,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/101d000f120152a6b451fc8a4906012e.gif",
 				"formatted_reqs": "Frostdraw:⠀30⠀",
+				"type": "Frostdraw",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17869,7 +17869,6 @@
 			},
 			{
 				"mantra": "Ice Lasers",
-				"attribute___oath": "Frostdraw",
 				"stars": "2",
 				"description": "Swift bolts of frozen air.\n",
 				"category": "Combat",
@@ -17879,6 +17878,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/12b7134d0bea484b9a05021efe92463b.gif",
 				"formatted_reqs": "Frostdraw:⠀30⠀",
+				"type": "Frostdraw",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17914,7 +17914,6 @@
 			},
 			{
 				"mantra": "Lightning Blade",
-				"attribute___oath": "Thundercall",
 				"stars": "0",
 				"description": "Arcing blades of electricity.\t",
 				"category": "Combat",
@@ -17924,6 +17923,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1059848188493828157/1059848189223632896/lightningblade.gif",
 				"formatted_reqs": "Thundercall:⠀1⠀",
+				"type": "Thundercall",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -17959,7 +17959,6 @@
 			},
 			{
 				"mantra": "Jolt Grab",
-				"attribute___oath": "Thundercall",
 				"stars": "0",
 				"description": "An electrified chokehold.\t",
 				"category": "Combat",
@@ -17969,6 +17968,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1059856128365834320/1059856129435369582/defaultgrab.gif",
 				"formatted_reqs": "Thundercall:⠀1⠀",
+				"type": "Thundercall",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18004,7 +18004,6 @@
 			},
 			{
 				"mantra": "Electro Carve",
-				"attribute___oath": "Thundercall",
 				"stars": "0",
 				"description": "Produce a highly potent field of electromagnetism, shocking all inside.\t",
 				"category": "Combat",
@@ -18014,6 +18013,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1059852487676399687/1059852488485904534/electrocarve.gif",
 				"formatted_reqs": "Thundercall:⠀1⠀",
+				"type": "Thundercall",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18049,7 +18049,6 @@
 			},
 			{
 				"mantra": "Lightning Beam",
-				"attribute___oath": "Thundercall",
 				"stars": "0",
 				"description": "Fire a beam of lightning.\t",
 				"category": "Combat",
@@ -18059,6 +18058,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1059859630177665057/1059859630366396457/lightning_beam.gif",
 				"formatted_reqs": "Thundercall:⠀1⠀",
+				"type": "Thundercall",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18094,7 +18094,6 @@
 			},
 			{
 				"mantra": "Lightning Impact",
-				"attribute___oath": "Thundercall",
 				"stars": "1",
 				"description": "Slam those under you with a lightning empowered kick.\t",
 				"category": "Combat",
@@ -18104,6 +18103,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1059861485578367026/1059861485947469825/impact.gif",
 				"formatted_reqs": "Thundercall:⠀20⠀",
+				"type": "Thundercall",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18139,7 +18139,6 @@
 			},
 			{
 				"mantra": "Lightning Clones",
-				"attribute___oath": "Thundercall",
 				"stars": "1",
 				"description": "Replicated forms of yourself conjured from electricity.\t",
 				"category": "Combat",
@@ -18149,6 +18148,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1060627312023978045/1060627312141406260/normal.gif",
 				"formatted_reqs": "Thundercall:⠀20⠀",
+				"type": "Thundercall",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18184,7 +18184,6 @@
 			},
 			{
 				"mantra": "Lightning Strike",
-				"attribute___oath": "Thundercall",
 				"stars": "1",
 				"description": "A strike of thunder at your desired location.\t",
 				"category": "Combat",
@@ -18194,6 +18193,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1059895046012412030/1059895046389895379/lstrike.gif",
 				"formatted_reqs": "Thundercall:⠀20⠀",
+				"type": "Thundercall",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18229,7 +18229,6 @@
 			},
 			{
 				"mantra": "Thunder Kick",
-				"attribute___oath": "Thundercall",
 				"stars": "1",
 				"description": "An unrelenting kick like a clap of thunder.\t",
 				"category": "Combat",
@@ -18239,6 +18238,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1059857795740086322/1059857796285341786/thunderkick.gif",
 				"formatted_reqs": "Thundercall:⠀20⠀",
+				"type": "Thundercall",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18274,7 +18274,6 @@
 			},
 			{
 				"mantra": "Storm Blades",
-				"attribute___oath": "Thundercall",
 				"stars": "1",
 				"description": "Conjure weapons of thunder with your ether.\t",
 				"category": "Combat",
@@ -18284,6 +18283,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1059865997215006801/1059865997491847248/stormblades.gif",
 				"formatted_reqs": "Thundercall:⠀20⠀",
+				"type": "Thundercall",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18319,7 +18319,6 @@
 			},
 			{
 				"mantra": "Grand Javelin",
-				"attribute___oath": "Thundercall",
 				"stars": "2",
 				"description": "A javelin of lightning.\t",
 				"category": "Combat",
@@ -18329,6 +18328,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1059903738434814094/1059903738736808017/grandjavelin.gif",
 				"formatted_reqs": "Thundercall:⠀30⠀",
+				"type": "Thundercall",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18364,7 +18364,6 @@
 			},
 			{
 				"mantra": "Bolt Piercer",
-				"attribute___oath": "Thundercall",
 				"stars": "2",
 				"description": "An arrow of lighting.\t",
 				"category": "Combat",
@@ -18374,6 +18373,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1059905453745766512/1059905454362349670/boltpiercer.gif",
 				"formatted_reqs": "Thundercall:⠀30⠀",
+				"type": "Thundercall",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18409,7 +18409,6 @@
 			},
 			{
 				"mantra": "Rising Thunder",
-				"attribute___oath": "Thundercall",
 				"stars": "3",
 				"description": "A rising tornado of thunder.",
 				"category": "Combat",
@@ -18419,6 +18418,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/75ed7940c14e8c5881634cb866934e4d.gif",
 				"formatted_reqs": "Thundercall:⠀50⠀",
+				"type": "Thundercall",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18454,7 +18454,6 @@
 			},
 			{
 				"mantra": "Lightning Stream",
-				"attribute___oath": "Thundercall",
 				"stars": "1",
 				"description": "A stream of lightning.\t",
 				"category": "Support",
@@ -18464,6 +18463,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1059902206280736918/1059902206456905838/lightningstream.gif",
 				"formatted_reqs": "Thundercall:⠀20⠀",
+				"type": "Thundercall",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18499,7 +18499,6 @@
 			},
 			{
 				"mantra": "Spark Swap",
-				"attribute___oath": "Thundercall",
 				"stars": "3",
 				"description": "Almost instantaneous swap of location with whoever your cursor is on.",
 				"category": "Support",
@@ -18509,6 +18508,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1059908122967294144/1059908123265077349/sswap.gif",
 				"formatted_reqs": "Thundercall:⠀50⠀",
+				"type": "Thundercall",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18544,7 +18544,6 @@
 			},
 			{
 				"mantra": "Lightning Assault",
-				"attribute___oath": "Thundercall",
 				"stars": "2",
 				"description": "A rush of lightning.\t",
 				"category": "Mobility",
@@ -18554,6 +18553,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1059907497688846366/1059907498330558534/lassault.gif",
 				"formatted_reqs": "Thundercall:⠀30⠀",
+				"type": "Thundercall",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18589,7 +18589,6 @@
 			},
 			{
 				"mantra": "Lightning Cloak",
-				"attribute___oath": "Thundercall",
 				"stars": "3",
 				"description": "A lightning cloak that empowers you.\t",
 				"category": "Mobility",
@@ -18599,6 +18598,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1059868236662980629/1059868236847521963/lc.gif",
 				"formatted_reqs": "Thundercall:⠀50⠀",
+				"type": "Thundercall",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18634,7 +18634,6 @@
 			},
 			{
 				"mantra": "Wind Blade",
-				"attribute___oath": "Galebreathe",
 				"stars": "0",
 				"description": "Slicing blades of wind.\n",
 				"category": "Combat",
@@ -18644,6 +18643,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/7190c7b88781bf4d3751cd6eff0ee25d.gif",
 				"formatted_reqs": "Thundercall:⠀1⠀",
+				"type": "Galebreathe",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18679,7 +18679,6 @@
 			},
 			{
 				"mantra": "Air Force",
-				"attribute___oath": "Galebreathe",
 				"stars": "0",
 				"description": "Shoots out an air blast.",
 				"category": "Combat",
@@ -18689,6 +18688,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/6b324fb787bf2c6df8a9184c0fbcc7d3.gif",
 				"formatted_reqs": "Thundercall:⠀1⠀",
+				"type": "Galebreathe",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18724,7 +18724,6 @@
 			},
 			{
 				"mantra": "Tornado Kick",
-				"attribute___oath": "Galebreathe",
 				"stars": "0",
 				"description": "Slicing blades of wind.\n",
 				"category": "Combat",
@@ -18734,6 +18733,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/f0f00165835643a6dd3669d772be2892.gif",
 				"formatted_reqs": "Thundercall:⠀1⠀",
+				"type": "Galebreathe",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18769,7 +18769,6 @@
 			},
 			{
 				"mantra": "Gale Lunge",
-				"attribute___oath": "Galebreathe",
 				"stars": "1",
 				"description": "A rush of piercing wind.\n",
 				"category": "Combat",
@@ -18779,6 +18778,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/2f4e32a964a3257d64c8b1a98f483d8e.gif",
 				"formatted_reqs": "Thundercall:⠀20⠀",
+				"type": "Galebreathe",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18814,7 +18814,6 @@
 			},
 			{
 				"mantra": "Tornado",
-				"attribute___oath": "Galebreathe",
 				"stars": "1",
 				"description": "A rushing current of wind.\n",
 				"category": "Combat",
@@ -18824,6 +18823,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1067417686734290967/1105840914829680761/ezgif-4-93b16976ea.gif",
 				"formatted_reqs": "Thundercall:⠀20⠀",
+				"type": "Galebreathe",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18859,7 +18859,6 @@
 			},
 			{
 				"mantra": "Heavenly Wind",
-				"attribute___oath": "Galebreathe",
 				"stars": "1",
 				"description": "A strike from the heavens.\n",
 				"category": "Combat",
@@ -18869,6 +18868,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/9096420084a007679e6ab806ce7e65a9.gif",
 				"formatted_reqs": "Thundercall:⠀20⠀",
+				"type": "Galebreathe",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18904,7 +18904,6 @@
 			},
 			{
 				"mantra": "Galetrap",
-				"attribute___oath": "Galebreathe",
 				"stars": "1",
 				"description": "Toss a wind landmine.\n",
 				"category": "Combat",
@@ -18914,6 +18913,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/5712caeae73491fdd293099ec5ca8bcc.gif",
 				"formatted_reqs": "Thundercall:⠀20⠀",
+				"type": "Galebreathe",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18949,7 +18949,6 @@
 			},
 			{
 				"mantra": "Gale Punch",
-				"attribute___oath": "Galebreathe",
 				"stars": "1",
 				"description": "Form a punch of wind in your fist and release it.\n",
 				"category": "Combat",
@@ -18959,6 +18958,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1067417686734290967/1105838411929108490/ezgif-4-31b5770d9d.gif",
 				"formatted_reqs": "Thundercall:⠀20⠀",
+				"type": "Galebreathe",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -18994,7 +18994,6 @@
 			},
 			{
 				"mantra": "Champion's Whirlthrow",
-				"attribute___oath": "Galebreathe",
 				"stars": "2",
 				"description": "Grab your opponent and toss them with the power of gale.\n",
 				"category": "Combat",
@@ -19004,6 +19003,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1064988486618333264/1064988486895141044/ce7059fd217b039dd7b1396dba5fe1a1_1.gif",
 				"formatted_reqs": "Thundercall:⠀30⠀",
+				"type": "Galebreathe",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19039,7 +19039,6 @@
 			},
 			{
 				"mantra": "Rising Wind",
-				"attribute___oath": "Galebreathe",
 				"stars": "2",
 				"description": "Use wind to uppercut and propel yourself into the air.\n",
 				"category": "Combat",
@@ -19049,6 +19048,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1058675866130989087/1060208645721297036/rising_wind.gif",
 				"formatted_reqs": "Thundercall:⠀30⠀",
+				"type": "Galebreathe",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19084,7 +19084,6 @@
 			},
 			{
 				"mantra": "Wind Gun",
-				"attribute___oath": "Galebreathe",
 				"stars": "2",
 				"description": "A powerful wind blast.\n",
 				"category": "Combat",
@@ -19094,6 +19093,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/6c28644ee0da2034e8f9ef34873b65fe.gif",
 				"formatted_reqs": "Thundercall:⠀30⠀",
+				"type": "Galebreathe",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19129,7 +19129,6 @@
 			},
 			{
 				"mantra": "Wind Carve",
-				"attribute___oath": "Galebreathe",
 				"stars": "2",
 				"description": "A quick swirl of sharp winds.\n",
 				"category": "Combat",
@@ -19139,6 +19138,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1060081388453363753/1060110266626478160/wind_carve.gif",
 				"formatted_reqs": "Thundercall:⠀30⠀",
+				"type": "Galebreathe",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19174,7 +19174,6 @@
 			},
 			{
 				"mantra": "Astral Wind",
-				"attribute___oath": "Galebreathe",
 				"stars": "3",
 				"description": "A rapid delivery of consecutive attacks.\n",
 				"category": "Combat",
@@ -19184,6 +19183,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1058675866130989087/1060209472741593128/astral_wind.gif",
 				"formatted_reqs": "Thundercall:⠀50⠀",
+				"type": "Galebreathe",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19219,7 +19219,6 @@
 			},
 			{
 				"mantra": "Wind Passage",
-				"attribute___oath": "Galebreathe",
 				"stars": "3",
 				"description": "A rush of wind.",
 				"category": "Mobility",
@@ -19229,6 +19228,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1067417686734290967/1105836495975231580/ezgif-4-bbabc65afc.gif",
 				"formatted_reqs": "Thundercall:  50",
+				"type": "Galebreathe",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19264,7 +19264,6 @@
 			},
 			{
 				"mantra": "Gale Wisp",
-				"attribute___oath": "Galebreathe",
 				"stars": "2",
 				"description": "A servant of wind.\n",
 				"category": "Support",
@@ -19274,6 +19273,7 @@
 				"completed": "",
 				"gif": "https://media.discordapp.net/attachments/1060081388453363753/1060109464352595978/gale_wisp.gif",
 				"formatted_reqs": "Thundercall:⠀30⠀",
+				"type": "Galebreathe",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19309,7 +19309,6 @@
 			},
 			{
 				"mantra": "Dark Blade",
-				"attribute___oath": "Shadowcast",
 				"stars": "0",
 				"description": "Slicing blades of dark energy.\t",
 				"category": "Combat",
@@ -19319,6 +19318,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/3cafcef03c07d113ef531edb0eae736a.gif",
 				"formatted_reqs": "Shadowcast:⠀1⠀",
+				"type": "Shadowcast",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19354,7 +19354,6 @@
 			},
 			{
 				"mantra": "Shadow Gun",
-				"attribute___oath": "Shadowcast",
 				"stars": "0",
 				"description": "An awful blast of dark energy.\t",
 				"category": "Combat",
@@ -19364,6 +19363,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1060274428589645895/1060274429181050910/shadow_gun.gif",
 				"formatted_reqs": "Shadowcast:⠀1⠀",
+				"type": "Shadowcast",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19399,7 +19399,6 @@
 			},
 			{
 				"mantra": "Clutching Shadow",
-				"attribute___oath": "Shadowcast",
 				"stars": "0",
 				"description": "A shadowy hand.\t",
 				"category": "Combat",
@@ -19409,6 +19408,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1060273220663656468/1060273221036945499/clutching_shadow.gif",
 				"formatted_reqs": "Shadowcast:⠀1⠀",
+				"type": "Shadowcast",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19444,7 +19444,6 @@
 			},
 			{
 				"mantra": "Shadow Chains",
-				"attribute___oath": "Shadowcast",
 				"stars": "1",
 				"description": "Chains of shadow.\t",
 				"category": "Combat",
@@ -19454,6 +19453,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1060275036226863325/1060275036533043230/shadow_chains.gif",
 				"formatted_reqs": "Shadowcast:⠀20⠀",
+				"type": "Shadowcast",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19489,7 +19489,6 @@
 			},
 			{
 				"mantra": "Shadow Eruption",
-				"attribute___oath": "Shadowcast",
 				"stars": "1",
 				"description": "Form a shockwave of darkness.\t",
 				"category": "Combat",
@@ -19499,6 +19498,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1060259046780837928/1060259047061852300/shadow_eruption.gif",
 				"formatted_reqs": "Shadowcast:⠀20⠀",
+				"type": "Shadowcast",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19534,7 +19534,6 @@
 			},
 			{
 				"mantra": "Shadow Seekers",
-				"attribute___oath": "Shadowcast",
 				"stars": "1",
 				"description": "Call forth the void to track your opponents.        ",
 				"category": "Combat",
@@ -19544,6 +19543,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1065304768102273104/1065304768416849970/ezgif.com-gif-maker_25.gif",
 				"formatted_reqs": "Shadowcast:⠀20⠀",
+				"type": "Shadowcast",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19579,7 +19579,6 @@
 			},
 			{
 				"mantra": "Encircle",
-				"attribute___oath": "Shadowcast",
 				"stars": "1",
 				"description": "Conjure shadows around your enemy before warp-striking to them.",
 				"category": "Combat",
@@ -19589,6 +19588,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/3c25935297cddd94ff09ed28394382e1.gif",
 				"formatted_reqs": "Shadowcast:⠀20⠀",
+				"type": "Shadowcast",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19624,7 +19624,6 @@
 			},
 			{
 				"mantra": "Shadow Roar",
-				"attribute___oath": "Shadowcast",
 				"stars": "2",
 				"description": "Roar a wave of shadows.",
 				"category": "Combat",
@@ -19634,6 +19633,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1060259842197049394/1060259842532581486/shadow_roar.gif",
 				"formatted_reqs": "Shadowcast:⠀30⠀",
+				"type": "Shadowcast",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19669,7 +19669,6 @@
 			},
 			{
 				"mantra": "Rising Shadow",
-				"attribute___oath": "Shadowcast",
 				"stars": "2",
 				"description": "Form a Shockwave of darkness.",
 				"category": "Combat",
@@ -19679,6 +19678,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1060264472373100654/1060264472620584981/rising_shadow.gif",
 				"formatted_reqs": "Shadowcast:⠀30⠀",
+				"type": "Shadowcast",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19714,7 +19714,6 @@
 			},
 			{
 				"mantra": "Shadow Meteors",
-				"attribute___oath": "Shadowcast",
 				"stars": "2",
 				"description": "Hail down meteors of darkness.",
 				"category": "Combat",
@@ -19724,6 +19723,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/089cc0c92da42549d61ee299c9146cb7.gif",
 				"formatted_reqs": "Shadowcast:⠀30⠀",
+				"type": "Shadowcast",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19759,7 +19759,6 @@
 			},
 			{
 				"mantra": "Shade Bringer",
-				"attribute___oath": "Shadowcast",
 				"stars": "3",
 				"description": "Temporarily summon a shadow greatsword for a large slash.",
 				"category": "Combat",
@@ -19769,6 +19768,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1060273872332652574/1060273872609484850/shade_bringer.gif",
 				"formatted_reqs": "Shadowcast:⠀50⠀",
+				"type": "Shadowcast",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19804,7 +19804,6 @@
 			},
 			{
 				"mantra": "Eclipse Kick",
-				"attribute___oath": "Shadowcast",
 				"stars": "3",
 				"description": "Show your foes your strength.",
 				"category": "Combat",
@@ -19814,6 +19813,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1060270150869323776/1060270151561392148/eclipse_kick.gif",
 				"formatted_reqs": "Strength:⠀20⠀Shadowcast:⠀50⠀",
+				"type": "Shadowcast",
 				"reqs": {
 					"power": "0",
 					"strength": "20",
@@ -19849,7 +19849,6 @@
 			},
 			{
 				"mantra": "Shadow Vortex",
-				"attribute___oath": "Shadowcast",
 				"stars": "3",
 				"description": "Create a shadow vortex that pulls in everything in its surroundings.",
 				"category": "Combat",
@@ -19859,6 +19858,7 @@
 				"completed": "",
 				"gif": "https://media.discordapp.net/attachments/1087564666579980338/1100142269497090209/ezgif-4-eace9e93c7.gif",
 				"formatted_reqs": "Shadowcast:⠀50⠀",
+				"type": "Shadowcast",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19894,7 +19894,6 @@
 			},
 			{
 				"mantra": "Shade Devour",
-				"attribute___oath": "Shadowcast",
 				"stars": "1",
 				"description": "Gorge on your own health for raw strength.",
 				"category": "Support",
@@ -19904,6 +19903,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1065304104156532776/1065304104697606246/ezgif.com-gif-maker_24.gif",
 				"formatted_reqs": "Shadowcast:⠀20⠀",
+				"type": "Shadowcast",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19939,7 +19939,6 @@
 			},
 			{
 				"mantra": "Shadow Assault",
-				"attribute___oath": "Shadowcast",
 				"stars": "2",
 				"description": "A rush of darkness.        ",
 				"category": "Mobility",
@@ -19949,6 +19948,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/decaf8fbc1cb00d45fabde0fa0924dcc.gif",
 				"formatted_reqs": "Shadowcast:⠀30⠀",
+				"type": "Shadowcast",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -19984,7 +19984,6 @@
 			},
 			{
 				"mantra": "Mindsoothe",
-				"attribute___oath": "Oath: Blindseer",
 				"stars": "0",
 				"description": "Heal nearby Players at the cost of your Sanity.",
 				"category": "Support",
@@ -19994,6 +19993,7 @@
 				"completed": "",
 				"gif": "https://media.discordapp.net/attachments/1075844217554866217/1075855047574962277/ezgif.com-video-to-gif_9.gif?width=630&height=498",
 				"formatted_reqs": "",
+				"type": "Oath: Blindseer",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20029,7 +20029,6 @@
 			},
 			{
 				"mantra": "Tranquil Circle",
-				"attribute___oath": "Oath: Blindseer",
 				"stars": "0",
 				"description": "Disables mantras from being used, gives 10% Monster Armour and also gain total immunity to mantras whilst inside the radius.",
 				"category": "Combat",
@@ -20039,6 +20038,7 @@
 				"completed": "",
 				"gif": "https://media.discordapp.net/attachments/1075844217554866217/1075855047969218610/ezgif.com-video-to-gif_10.gif",
 				"formatted_reqs": "",
+				"type": "Oath: Blindseer",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20074,7 +20074,6 @@
 			},
 			{
 				"mantra": "Sightless Beam",
-				"attribute___oath": "Oath: Blindseer",
 				"stars": "0",
 				"description": "Fires a high pressure beam from your eyes.",
 				"category": "Combat",
@@ -20084,6 +20083,7 @@
 				"completed": "",
 				"gif": "https://media.discordapp.net/attachments/1075844217554866217/1075855047084232785/ezgif.com-video-to-gif_8.gif?width=713&height=498",
 				"formatted_reqs": "",
+				"type": "Oath: Blindseer",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20119,7 +20119,6 @@
 			},
 			{
 				"mantra": "Illusory Servants",
-				"attribute___oath": "Oath: Visionshaper",
 				"stars": "0",
 				"description": "Spawns an illusion of yourself that targets the closest player.",
 				"category": "Combat",
@@ -20129,6 +20128,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/87ce7436c610cfc1654737c83c5878a3.gif",
 				"formatted_reqs": "",
+				"type": "Oath: Visionshaper",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20164,7 +20164,6 @@
 			},
 			{
 				"mantra": "Illusionary Realm",
-				"attribute___oath": "Oath: Visionshaper",
 				"stars": "0",
 				"description": "Teleport you and nearby players to an alternative dimension.",
 				"category": "Support",
@@ -20174,6 +20173,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/7e33dad14acf295b12491635f0a00ea3.gif",
 				"formatted_reqs": "",
+				"type": "Oath: Visionshaper",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20209,7 +20209,6 @@
 			},
 			{
 				"mantra": "Illusionary Counter",
-				"attribute___oath": "Oath: Visionshaper",
 				"stars": "0",
 				"description": "If hit during the pose, negate the attacks and teleport the user behind the attacker.",
 				"category": "Combat",
@@ -20219,6 +20218,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/08f09b94fe22dfe95e4135b80964d073.gif",
 				"formatted_reqs": "",
+				"type": "Oath: Visionshaper",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20254,7 +20254,6 @@
 			},
 			{
 				"mantra": "Symbiotic Link",
-				"attribute___oath": "Oath: Linkstrider",
 				"stars": "0",
 				"description": "Activate while hovering over an ally to buff them, or activate while hovering over an opponent to debuff them.",
 				"category": "Support",
@@ -20264,6 +20263,7 @@
 				"completed": "",
 				"gif": "",
 				"formatted_reqs": "",
+				"type": "Oath: Linkstrider",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20299,7 +20299,6 @@
 			},
 			{
 				"mantra": "Symbiotic Sustain",
-				"attribute___oath": "Oath: Linkstrider",
 				"stars": "0",
 				"description": "If linked to an ally, this move will take ~5% of your health and then heal your ally by that times an undefined amount.",
 				"category": "Support",
@@ -20309,6 +20308,7 @@
 				"completed": "",
 				"gif": "",
 				"formatted_reqs": "",
+				"type": "Oath: Linkstrider",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20344,7 +20344,6 @@
 			},
 			{
 				"mantra": "Symbiotic Leech",
-				"attribute___oath": "Oath: Linkstrider",
 				"stars": "0",
 				"description": "If linked to an enemy, this move will start leeching your opponent's health for a few seconds while healing you.",
 				"category": "Support",
@@ -20354,6 +20353,7 @@
 				"completed": "",
 				"gif": "",
 				"formatted_reqs": "",
+				"type": "Oath: Linkstrider",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20389,7 +20389,6 @@
 			},
 			{
 				"mantra": "Ascension",
-				"attribute___oath": "Oath: Starkindred",
 				"stars": "0",
 				"description": "The user rises into the air before swooping in.",
 				"category": "Combat",
@@ -20399,6 +20398,7 @@
 				"completed": "",
 				"gif": "https://media.discordapp.net/attachments/927968957858738216/1056572976633487430/starkindredmantra1.gif?width=421&height=609",
 				"formatted_reqs": "",
+				"type": "Oath: Starkindred",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20434,7 +20434,6 @@
 			},
 			{
 				"mantra": "Celestial Assault",
-				"attribute___oath": "Oath: Starkindred",
 				"stars": "0",
 				"description": "Deliver a vertical slash",
 				"category": "Combat",
@@ -20444,6 +20443,7 @@
 				"completed": "",
 				"gif": "https://media.discordapp.net/attachments/1067417686734290967/1082947539176800266/ezgif-3-19e7d4c932.gif?width=548&height=498",
 				"formatted_reqs": "",
+				"type": "Oath: Starkindred",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20479,7 +20479,6 @@
 			},
 			{
 				"mantra": "Sinister Halo",
-				"attribute___oath": "Oath: Starkindred",
 				"stars": "0",
 				"description": "Emit a spinning ring of celestial energy, trapping and shredding any who steps before its wake.",
 				"category": "Combat",
@@ -20489,6 +20488,7 @@
 				"completed": "",
 				"gif": "https://media.discordapp.net/attachments/1067417686734290967/1082947155658022943/ezgif-3-36fdf8e8f3.gif?width=339&height=498",
 				"formatted_reqs": "",
+				"type": "Oath: Starkindred",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20524,7 +20524,6 @@
 			},
 			{
 				"mantra": "Arc Suit",
-				"attribute___oath": "Oath: Arcwarder",
 				"stars": "0",
 				"description": "Encases the user in a durable armor.",
 				"category": "Support",
@@ -20534,6 +20533,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/ef37c078dd8d9ef1543519e3858ced1e.gif",
 				"formatted_reqs": "",
+				"type": "Oath: Arcwarder",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20569,7 +20569,6 @@
 			},
 			{
 				"mantra": "Arc Beam",
-				"attribute___oath": "Oath: Arcwarder",
 				"stars": "0",
 				"description": "Shoot out a laser from your eyes that explodes after a second, dealing fire and lightning damage.",
 				"category": "Combat",
@@ -20579,6 +20578,7 @@
 				"completed": "",
 				"gif": "https://media.discordapp.net/attachments/807946659668426782/1076256521379381308/b.gif",
 				"formatted_reqs": "",
+				"type": "Oath: Arcwarder",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20614,7 +20614,6 @@
 			},
 			{
 				"mantra": "Arc Wave",
-				"attribute___oath": "Oath: Arcwarder",
 				"stars": "0",
 				"description": "Release a wave of energy around you, dealing fire and lightning damage.",
 				"category": "Combat",
@@ -20624,6 +20623,7 @@
 				"completed": "",
 				"gif": "https://media.discordapp.net/attachments/807946659668426782/1076256521727512766/a.gif",
 				"formatted_reqs": "",
+				"type": "Oath: Arcwarder",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20659,7 +20659,6 @@
 			},
 			{
 				"mantra": "Blinding Dawn",
-				"attribute___oath": "Oath: Dawnwalker",
 				"stars": "3",
 				"description": "Dance uncontrollably. No one can withstand the sheer groove of your spin routine.",
 				"category": "Combat",
@@ -20669,6 +20668,7 @@
 				"completed": "",
 				"gif": "https://media.discordapp.net/attachments/1075844217554866217/1075851171874480199/ezgif.com-video-to-gif_4.gif",
 				"formatted_reqs": "",
+				"type": "Oath: Dawnwalker",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20704,7 +20704,6 @@
 			},
 			{
 				"mantra": "Radiant Kick",
-				"attribute___oath": "Oath: Dawnwalker",
 				"stars": "3",
 				"description": "Kick your foes at the speed of light.",
 				"category": "Combat",
@@ -20714,6 +20713,7 @@
 				"completed": "",
 				"gif": "https://media.discordapp.net/attachments/1075844217554866217/1075851173543825520/ezgif.com-video-to-gif_6.gif",
 				"formatted_reqs": "",
+				"type": "Oath: Dawnwalker",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20749,7 +20749,6 @@
 			},
 			{
 				"mantra": "Judgement",
-				"attribute___oath": "Oath: Contractor",
 				"stars": "0",
 				"description": "Summons a black casting circle before enveloping your target in black tendrils and tearing them apart.",
 				"category": "Combat",
@@ -20759,6 +20758,7 @@
 				"completed": "",
 				"gif": "https://images-ext-2.discordapp.net/external/2AW8H6bdc1nGzHclDtMXrXRU3teD4hnKjnHRHqhmywo/https/i.gyazo.com/0438876526baff9416e102060e41d58a.gif?width=643&height=498",
 				"formatted_reqs": "",
+				"type": "Oath: Contractor",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20794,7 +20794,6 @@
 			},
 			{
 				"mantra": "Lord's Slice",
-				"attribute___oath": "Oath: Contractor",
 				"stars": "0",
 				"description": "Makes the Hidden Tendril from 'Hidden Tendril' contract, pulling both the user and enemy closer.",
 				"category": "Combat",
@@ -20804,6 +20803,7 @@
 				"completed": "",
 				"gif": "https://images-ext-1.discordapp.net/external/HDtCCytUT-szCnpqPihZuHybOcHZCzNLcUZ44QALNrA/https/i.gyazo.com/64578dae1f7287cbd7d2da9ec9f6a4ad.gif?width=550&height=498",
 				"formatted_reqs": "",
+				"type": "Oath: Contractor",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20839,7 +20839,6 @@
 			},
 			{
 				"mantra": "Equalizer",
-				"attribute___oath": "Oath: Contractor",
 				"stars": "0",
 				"description": "A counter that leaves your opponent open",
 				"category": "Combat",
@@ -20849,6 +20848,7 @@
 				"completed": "",
 				"gif": "https://images-ext-1.discordapp.net/external/KiOMIKwVfSBQVeUWv5KkdSplmqu86y8dSL4aHXpSCtY/https/i.gyazo.com/d7123df8a0751bfa3e1c157f512b6f0d.gif?width=602&height=498",
 				"formatted_reqs": "",
+				"type": "Oath: Contractor",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20884,7 +20884,6 @@
 			},
 			{
 				"mantra": "Enforcer Pull",
-				"attribute___oath": "Monster Mantra",
 				"stars": "2",
 				"description": "Pull enemies towards you.",
 				"category": "Support",
@@ -20894,6 +20893,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1065736906568106095/1065736906840756264/enfpull.gif",
 				"formatted_reqs": "",
+				"type": "Monster Mantra",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20929,7 +20929,6 @@
 			},
 			{
 				"mantra": "Beast Burrow",
-				"attribute___oath": "Monster Mantra",
 				"stars": "2",
 				"description": "Burrow underneath the ground before bursting out, knocking enemies up.",
 				"category": "Mobility",
@@ -20939,6 +20938,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1065708330397483119/1065708330749800488/burrow.gif",
 				"formatted_reqs": "",
+				"type": "Monster Mantra",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -20974,7 +20974,6 @@
 			},
 			{
 				"mantra": "Coral Spear",
-				"attribute___oath": "Monster Mantra",
 				"stars": "2",
 				"description": "Fire corals all around you.",
 				"category": "Combat",
@@ -20984,6 +20983,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1063227648760885370/1063227649113215026/DeepwokenLayer3Leak.gif",
 				"formatted_reqs": "",
+				"type": "Monster Mantra",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -21019,7 +21019,6 @@
 			},
 			{
 				"mantra": "Dread Breath",
-				"attribute___oath": "Monster Mantra",
 				"stars": "2",
 				"description": "Channels the song through the power of the Dread Serpent.",
 				"category": "Combat",
@@ -21029,6 +21028,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1065997073767477389/1065997073972985937/diiiickbreath.gif",
 				"formatted_reqs": "",
+				"type": "Monster Mantra",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -21064,7 +21064,6 @@
 			},
 			{
 				"mantra": "Brachial Spear",
-				"attribute___oath": "Monster Mantra",
 				"stars": "2",
 				"description": "Throw a bone REALLY hard. Sans undertale",
 				"category": "Combat",
@@ -21074,6 +21073,7 @@
 				"completed": "",
 				"gif": "https://cdn.discordapp.com/attachments/1062831921748521060/1062831921970810961/spear.gif",
 				"formatted_reqs": "",
+				"type": "Monster Mantra",
 				"reqs": {
 					"power": "0",
 					"strength": "0",
@@ -21109,7 +21109,6 @@
 			},
 			{
 				"mantra": "Mecha Gatling",
-				"attribute___oath": "Monster Mantra",
 				"stars": "2",
 				"description": "Let loose a torrent of bullets from your shoulder mounted minigun.",
 				"category": "Combat",
@@ -21119,6 +21118,7 @@
 				"completed": "",
 				"gif": "https://i.gyazo.com/b68832327f5169ca8470ade65a54d992.gif",
 				"formatted_reqs": "",
+				"type": "Monster Mantra",
 				"reqs": {
 					"power": "0",
 					"strength": "0",

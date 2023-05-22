@@ -74,7 +74,6 @@ module.exports = {
 
                     let regex = new RegExp(/x(\d+)|(\d+)/)
                     let res = regex.exec(materialStr)
-                    console.log(res)
 
                     if (!res || !res[0] || !res[1]) continue;
 
@@ -131,24 +130,57 @@ module.exports = {
                 .setTimestamp()
                 .addFields(
                     { name: 'Cost', value: '```'+`${entry['cost']} Notes`+'```', inline: true },
-                    { name: 'Durability', value: '```'+`${entry['durability']}`+'```', inline: true },
-                    { name: '\u000B', value: '\u000B' },
-                    { name: 'Extra Stealth', value: '```'+`${entry['extra_stealth']}`+'```', inline: true },
-                    { name: 'Ether Regen', value: '```'+`${entry['ether_regen']}`+'```', inline: true },
+                    { name: 'Durability', value: '```'+`${entry['durability']}`+'```', inline: true }
                 )
 
+            if (entry['talents'] != "") {
+                embed.addFields({name: 'Talents', value: '```' + `${entry['talents']}` + '```'})
+            }
+
             if (entry['image']) {
-                embed.setThumbnail(entry['image'])
+                embed.setImage(entry['image'])
             }
 
             let matResults = ''
             const materials = entry['materials']
-            console.log(materials)
             for (let matIndex = 0; matIndex < materials.length; matIndex++) {
                 matResults += `${replaceAll(capitalize(materials[matIndex].mat), '_', ' ')}: ${materials[matIndex].amt}\n`
             }
 
             if (matResults) embed.addFields({name: 'Materials', value: '```'+`${matResults}`+'```'});
+
+            let reqResults = ''
+            for (let reqIndex = 0; reqIndex < Object.keys(entry["reqs"]).length; reqIndex++) {
+                const reqName = Object.keys(entry["reqs"])[reqIndex];
+
+                if (!parseInt(entry["reqs"][reqName]) > 0) continue;
+
+                reqResults += `${replaceAll(capitalize(reqName), '_', ' ')}: ${entry["reqs"][reqName]}\n`
+            }
+
+            if (reqResults != '') embed.addFields({ name: 'Requirements', value: '```' + `${reqResults}` + '```', inline: true })
+            
+            let traitResults = ''
+            for (let reqIndex = 0; reqIndex < Object.keys(entry["resistances"]).length; reqIndex++) {
+                const reqName = Object.keys(entry["resistances"])[reqIndex];
+
+                if (!parseInt(entry["resistances"][reqName]) > 0) continue;
+
+                traitResults += `${replaceAll(capitalize(reqName), '_', ' ')}: ${entry["resistances"][reqName]}\n`
+            }
+
+            if (entry['ether_regen'] != "0%" | "") {
+                traitResults += `Ether Regen: ${entry['ether_regen']}`
+                if (entry['extra_stealth'] != "0%" | "") {
+                    traitResults += '\n'
+                }
+            }
+
+            if (entry['extra_stealth'] != "0%" | "") {
+                traitResults += `Extra Stealth: ${entry['extra_stealth']}`
+            }
+
+            if (traitResults != '') embed.addFields({ name: 'Resistances', value: '```' + `${traitResults}` + '```' })
 
             pages.push(embed)
         }

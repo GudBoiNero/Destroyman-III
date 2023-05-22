@@ -4,7 +4,7 @@ const { fetchData } = require('../util/fetchData.js')
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('fetch_data')
+        .setName('refresh_data')
         .setDescription('Refreshes the data of the bot. Useable only by authorized users.'),
     /**
      * 
@@ -16,7 +16,7 @@ module.exports = {
 
         await interaction.deferReply({ephemeral: true})
         if (AUTHORIZED_USERS.includes(userId)) {
-            await interaction.editReply({ embeds: [new EmbedBuilder().setTitle('Fetching Data...').setTimestamp()] })
+            await interaction.editReply({ embeds: [new EmbedBuilder().setTitle('Fetching Google Sheet...').setTimestamp()] })
             try {
                 await fetchData()
                 const successEmbed = new EmbedBuilder().setTitle('Successfully Fetched Data!')
