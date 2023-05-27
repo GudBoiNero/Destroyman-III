@@ -104,7 +104,7 @@ module.exports = {
             const name = requirements[index];
 
             builder.addStringOption(option =>
-                option.setName(`${name}`).setDescription(`Maximum requirement of ${name}. int:int to denote minimum / maximum.`)
+                option.setName(`${name}`).setDescription(`Int Range of ${name}. Check /help for more info.`)
             )
         }
     },

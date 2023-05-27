@@ -1,25 +1,25 @@
-const { SlashCommandBuilder, EmbedBuilder, SlashCommandSubcommandBuilder } = require('discord.js')
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js')
 const { getSheet } = require('../util/queryData')
 const { PagesBuilder, PagesManager } = require('discord.js-pages');
-const { replaceAll } = require('../util/replaceAll');
-const { Requirements, QueryHelper, setRequirements, capitalize } = require('../util/findUtil')
+const { QueryHelper } = require('../util/findUtil')
+const commandInfo = require('../../res/data/command.info.json')
 
 const pagesManager = new PagesManager();
 
 module.exports = {
     data: ((builder) => {
         builder.setName('find_enchant')
-            .setDescription('Find a certain enchant.')
+            .setDescription(commandInfo.find_enchant.description)
             .addStringOption(option =>
                 option.setName('name')
-                    .setDescription('The name to search for...'))
+                    .setDescription("The name of the enchant to look for..."))
             .addStringOption(option =>
                 option.setName('type')
-                    .setDescription('The type to search for...')
+                    .setDescription('The enchant type to search for...')
                     .addChoices({ name: 'weapon', value: 'weapon' }, { name: 'armor', value: 'armor' }))
             .addStringOption(option =>
                 option.setName('description')
-                    .setDescription('The description to search for...'))
+                    .setDescription('The description to look for...'))
 
         return builder
     })(new SlashCommandBuilder()),

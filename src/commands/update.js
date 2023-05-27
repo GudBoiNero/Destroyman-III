@@ -2,11 +2,12 @@ const { SlashCommandBuilder, CommandInteraction, EmbedBuilder } = require('disco
 const { AUTHORIZED_USERS, GITHUB_PRIVATE_KEY, ALLOW_UPDATING } = require('../config.json')
 const { exec } = require('child_process')
 const { consoleColors } = require('../util/consoleColors')
+const commandInfo = require('../../res/data/command.info.json')
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('update')
-        .setDescription('Pulls new data from the github repo.'),
+        .setDescription(commandInfo.update.description),
     /**
      * 
      * @param { CommandInteraction } interaction 

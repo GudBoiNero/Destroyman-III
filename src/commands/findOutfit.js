@@ -1,15 +1,16 @@
-const { SlashCommandBuilder, EmbedBuilder, AttachmentBuilder } = require('discord.js')
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js')
 const { getSheet } = require('../util/queryData')
 const { PagesBuilder, PagesManager } = require('discord.js-pages');
 const { replaceAll } = require('../util/replaceAll');
 const { Requirements, QueryHelper, setRequirements, capitalize } = require('../util/findUtil');
 const OutfitResistances = ["physical_resistance", "slash_resistance", "blunt_resistance", "elemental_resistance", "flame_resistance", "ice_resistance", "thunder_resistance", "wind_resistance", "shadow_resistance"]
 const pagesManager = new PagesManager();
+const commandInfo = require('../../res/data/command.info.json')
 
 module.exports = {
     data: ((builder) => {
         builder.setName('find_outfit')
-            .setDescription('Find a certain outfit.')
+            .setDescription(commandInfo.find_outfit.description)
             .addStringOption(option =>
                 option.setName('name')
                     .setDescription('The name to search for...'))
