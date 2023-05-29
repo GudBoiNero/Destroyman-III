@@ -1,15 +1,15 @@
-const { SlashCommandBuilder, EmbedBuilder, SlashCommandSubcommandBuilder } = require('discord.js')
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js')
 const { getSheet } = require('../util/queryData')
 const { PagesBuilder, PagesManager } = require('discord.js-pages');
-const { replaceAll } = require('../util/replaceAll');
-const { Requirements, QueryHelper, setRequirements, capitalize } = require('../util/findUtil')
+const { QueryHelper } = require('../util/findUtil')
+const commandInfo = require('../../res/data/command.info.json')
 
 const pagesManager = new PagesManager();
 
 module.exports = {
     data: ((builder) => {
         builder.setName('find_mystic')
-            .setDescription('Find a certain mystic dialogue.')
+            .setDescription(commandInfo.find_mystic.description)
             .addStringOption(option =>
                 option.setName('category')
                     .setDescription('The category to search for...'))

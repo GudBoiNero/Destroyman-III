@@ -1,15 +1,16 @@
-const { SlashCommandBuilder, EmbedBuilder, SlashCommandSubcommandBuilder } = require('discord.js')
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js')
 const { getSheet } = require('../util/queryData')
 const { PagesBuilder, PagesManager } = require('discord.js-pages');
-const { replaceAll, replaceAllInList } = require('../util/replaceAll');
+const { replaceAll } = require('../util/replaceAll');
 const { Requirements, QueryHelper, setRequirements, capitalize } = require('../util/findUtil')
+const commandInfo = require('../../res/data/command.info.json')
 
 const pagesManager = new PagesManager();
 
 module.exports = {
     data: ((builder) => {
         builder.setName('find_weapon')
-            .setDescription('Find a certain weapon.')
+            .setDescription(commandInfo.find_weapon.description)
             .addStringOption(option =>
                 option.setName('name')
                     .setDescription('The name to search for...'))

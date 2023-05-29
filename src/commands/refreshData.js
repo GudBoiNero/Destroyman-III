@@ -1,11 +1,12 @@
 const { SlashCommandBuilder, CommandInteraction, EmbedBuilder } = require('discord.js')
 const { AUTHORIZED_USERS } = require('../config.json')
 const { fetchData } = require('../util/fetchData.js')
+const commandInfo = require('../../res/data/command.info.json')
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('refresh_data')
-        .setDescription('Refreshes the data of the bot. Useable only by authorized users.'),
+        .setDescription(commandInfo.refresh_data.description),
     /**
      * 
      * @param { CommandInteraction } interaction 

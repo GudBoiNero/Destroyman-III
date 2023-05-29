@@ -1,0 +1,34 @@
+{
+    "find_enchant": {
+        "description": "Finds and displays the properties and description of any enchant(s).",
+        "guide": "- The `name` option will make a String Query for your input. \n- The `type` option will specify which type of enchants you would like to see.\n- The `description` option will perform a String Query for your input."
+    },
+    "find_mantra": {
+        "description": "Finds and displays the properties and description of any mantra(s).",
+        "guide": "- The `name` option will make a String Query for your input.\n- The `stars` option is an Int Range which determines how many stars the entries should have. \nAll other options are Int Ranges for certain attributes like `strength`, `agility`, `galebreathe`, `thundercall`, etc."
+    },
+    "find_mystic": {
+        "description": "Finds and displays dialogues of mystic, as well as the category that the dialogue corresponds to.",
+        "guide": "- The `name` option will make a String Query for your input.\n"
+    },
+    "find_outfit": {
+        "description": "Finds and displays outfits. Including the requirements and cost to get them.",
+        "guide": "- The `name` option will make a String Query for your input.\n"
+    },
+    "find_talent": {
+        "description": "Finds and displays the properties and description of any talent(s).",
+        "guide": "- The `name` option will make a String Query for your input.\n"
+    },
+    "find_weapon": {
+        "description": "Finds and displays weapons, as well as their properties and requirements.",
+        "guide": "- The `name` option will make a String Query for your input.\n"
+    },
+    "refresh_data": {
+        "description": "Refreshes the data of the bot. Useable only by authorized users.",
+        "guide": "..."
+    },
+    "update": {
+        "description": "Pulls new data from the github repo. Useable only by authorized users.",
+        "guide": "..."
+    }
+}

@@ -56,7 +56,8 @@
                 "frostdraw",
                 "thundercall",
                 "galebreathe",
-                "shadowcast"
+                "shadowcast",
+                "ironsing"
             ]
         },
         "mantras": {
@@ -75,7 +76,8 @@
                 "frostdraw",
                 "thundercall",
                 "galebreathe",
-                "shadowcast"
+                "shadowcast",
+                "ironsing"
             ],
             "mods": [
                 "aeon_logstone",
@@ -120,7 +122,8 @@
                 "frostdraw",
                 "thundercall",
                 "galebreathe",
-                "shadowcast"
+                "shadowcast",
+                "ironsing"
             ],
             "stats": [
                 "type",
@@ -157,7 +160,8 @@
                 "ice_resistance",
                 "thunder_resistance",
                 "wind_resistance",
-                "shadow_resistance"
+                "shadow_resistance",
+                "metal_resistance"
             ]
         },
         "mystic": {},
